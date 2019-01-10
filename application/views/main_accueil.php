@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Page d'accueil GSB Code Igniter</title>
+	<title>Galaxy Swiss Bourdin</title>
 
 	<style type="text/css">
 
