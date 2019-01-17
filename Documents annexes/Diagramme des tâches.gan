@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Galaxy Swiss Bourdin version 3 (CodeIgniter)" company="Galaxy Swiss Bourdin" webLink="http://" view-date="2019-02-15" view-index="0" gantt-divider-location="779" resource-divider-location="300" version="2.0" locale="fr">
+    <description/>
+    <view zooming-state="default:2" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="81" order="0"/>
+        <field id="tpd4" name="Date de début" width="10" order="1"/>
+        <field id="tpd5" name="Date de fin" width="8" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nom" width="50" order="0"/>
+        <field id="1" name="Rôle par défaut" width="49" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <calendar id="1" name="default">
+                <default-week sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+                <only-show-weekends value="true"/>
+                <overriden-day-types/>
+                <days/>
+            </calendar>
+        </day-types>
+        <date year="2012" month="1" date="2"/>
+        <date year="2012" month="4" date="9"/>
+        <date year="2012" month="5" date="17"/>
+        <date year="2012" month="5" date="28"/>
+        <date year="2012" month="11" date="12"/>
+        <date year="2005" month="3" date="28"/>
+        <date year="" month="1" date="1"/>
+        <date year="" month="5" date="1"/>
+        <date year="" month="5" date="8"/>
+        <date year="" month="7" date="14"/>
+        <date year="" month="8" date="15"/>
+        <date year="" month="11" date="1"/>
+        <date year="" month="11" date="11"/>
+        <date year="" month="12" date="25"/>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="7" name="(T + L) Connexion visiteur et délégué" color="#000000" meeting="false" start="2019-01-17" duration="7" complete="0" expand="true">
+            <depend id="0" type="2" difference="0" hardness="Strong"/>
+            <depend id="3" type="2" difference="0" hardness="Strong"/>
+            <depend id="21" type="2" difference="0" hardness="Strong"/>
+            <task id="8" name="(T + L) Formulaire de connexion" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="0" expand="true"/>
+            <task id="9" name="(T + L) Contrôle des informations insérées" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="0" expand="true"/>
+            <task id="10" name="(T + L) Cryptage des données" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="0" expand="true">
+                <depend id="11" type="2" difference="0" hardness="Strong"/>
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="11" name="(T + L) Si connecté, informe le visiteur + affichage du menu identité du visiteur ainsi que sa région de rattachement" color="#8cb6ce" meeting="false" start="2019-01-21" duration="3" complete="0" expand="true">
+                <depend id="0" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="14" name="(T + L) Gérer la déconnexion" color="#8cb6ce" meeting="false" start="2019-01-21" duration="3" complete="0" expand="true">
+                <depend id="0" type="2" difference="0" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="0" name="Partie visiteur" meeting="false" start="2019-01-24" duration="46" complete="0" expand="true">
+            <task id="21" name="(T) Saisie rapports de visites" color="#000000" meeting="false" start="2019-01-24" duration="30" complete="0" expand="true">
+                <depend id="5" type="2" difference="0" hardness="Strong"/>
+                <task id="1" name="(T) Gérer la saisie + validation de la saisie du rapport de visite" color="#8cb6ce" meeting="false" start="2019-01-24" duration="14" complete="0" expand="true">
+                    <depend id="16" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="16" name="(T) Affichage de la liste des rapports de visite en cours de saisie" color="#8cb6ce" meeting="false" start="2019-02-07" duration="8" complete="0" expand="true">
+                    <depend id="2" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="2" name="(T) Reprendre la saisie d'un rapport de visite si ancien rapport non validé" color="#8cb6ce" meeting="false" start="2019-02-15" duration="8" complete="0" expand="true">
+                    <depend id="5" type="2" difference="0" hardness="Strong"/>
+                </task>
+            </task>
+            <task id="3" name="(L) Consultation des rapports de visite" color="#000000" meeting="false" start="2019-01-24" duration="30" complete="0" expand="true">
+                <depend id="6" type="2" difference="0" hardness="Strong"/>
+                <task id="17" name="(L) Gérer la recherche des rapports de visite en fonction d'une fouchette de date" color="#8cb6ce" meeting="false" start="2019-01-24" duration="10" complete="0" expand="true">
+                    <depend id="18" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="18" name="(L) Gérer aussi la recherche eventuellement grâce à une liste des noms des praticiens visités" color="#8cb6ce" meeting="false" start="2019-02-03" duration="5" complete="0" expand="true">
+                    <depend id="19" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="19" name="(L) Liste des rapports de visite triés par date (num rapport, num et nom praticien, motif visite, date visite, codes et noms médicaments)" color="#8cb6ce" meeting="false" start="2019-02-08" duration="5" complete="0" expand="true">
+                    <depend id="20" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="20" name="(L) Gérer les cas d'erreurs" color="#8cb6ce" meeting="false" start="2019-02-13" duration="5" complete="0" expand="true">
+                    <depend id="4" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="4" name="(L) Consulter un rapport de visite" color="#8cb6ce" meeting="false" start="2019-02-18" duration="5" complete="0" expand="true">
+                    <depend id="6" type="2" difference="0" hardness="Strong"/>
+                </task>
+            </task>
+            <task id="5" name="(T) Consulter un praticien" color="#000000" meeting="false" start="2019-02-23" duration="16" complete="0" expand="true">
+                <task id="22" name="(T) Liste déroulante des praticiens" color="#8cb6ce" meeting="false" start="2019-02-23" duration="8" complete="0" expand="true">
+                    <depend id="23" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="23" name="(T) Affichage des informations du praticien sélectionné" color="#8cb6ce" meeting="false" start="2019-03-03" duration="8" complete="0" expand="true"/>
+            </task>
+            <task id="6" name="(L) Consulter médicament" color="#000000" meeting="false" start="2019-02-23" duration="16" complete="0" expand="true">
+                <task id="25" name="(L) Liste déroulante des médicaments" color="#8cb6ce" meeting="false" start="2019-02-23" duration="8" complete="0" expand="true">
+                    <depend id="26" type="2" difference="0" hardness="Strong"/>
+                </task>
+                <task id="26" name="(L) Affichage des informations du médicament sélectionné" color="#8cb6ce" meeting="false" start="2019-03-03" duration="8" complete="0" expand="true"/>
+            </task>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Besson Loan" function="SoftwareDevelopment:2" contacts="loan.besson@hotmail.fr" phone="0667572013"/>
+        <resource id="1" name="Juin Tatiana" function="SoftwareDevelopment:2" contacts="tatiana.juinp15@gmail.com" phone="0666537788"/>
+    </resources>
+    <allocations>
+        <allocation task-id="8" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="9" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="10" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="14" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="17" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="18" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="19" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="20" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="4" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="25" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="26" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="7" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="3" resource-id="0" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="8" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="9" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="10" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="11" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="14" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="50.0"/>
+        <allocation task-id="1" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="16" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="2" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="22" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="23" resource-id="1" function="SoftwareDevelopment:2" responsible="false" load="100.0"/>
+        <allocation task-id="21" resource-id="1" function="SoftwareDevelopment:2" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <taskdisplaycolumns>
+        <displaycolumn property-id="tpd2" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd7" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd6" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd10" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd11" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd1" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
+        <displaycolumn property-id="tpd3" order="0" width="633" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="80" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="62" visible="true"/>
+    </taskdisplaycolumns>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
