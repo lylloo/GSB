@@ -1,11 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+
+echo doctype('html5');
+?>
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>Galaxy Swiss Bourdin</title>
-
+	<?php echo meta('Content-type', 'text/html; charset=utf-8', 'equiv'); ?>
 	<style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -66,18 +68,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</style>
 </head>
 <body>
-
-<div id="container">
-	<h1>Bienvenue sur GSB</h1>
-
-	<div id="body">
-		
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus obcaecati impedit architecto commodi modi odit, molestiae omnis beatae libero reiciendis consequuntur quas aut, accusantium magni cumque amet. Necessitatibus, adipisci sit!</p>
-
+	<div id="container">
+		<?php echo heading("Espace connexion Galaxy Swiss Bourdin", 1); ?>
+		<div id="body" style="text-align:center;">
+		<?php
+			echo //Affichage du formulaire
+				form_open("Connexion/validation_informations").
+				form_label("Nom de famille: ").
+				form_input("nom").
+				br(2).
+				form_label("Date d'embauche : ").
+				"<input type='date' name='date'>".
+				br(2).
+				form_submit("valider", "Se connecter").
+				form_reset("reset", "Effacer").
+				form_close();
+			
+			//Si il manque une ou plusieurs informations du formulaire
+			if (isset($validation))
+				echo validation_errors(); //On affiche les erreurs de validation
+		?>
+		</div>
+		<p class="footer">Page rendue en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
-
 </body>
 </html>
