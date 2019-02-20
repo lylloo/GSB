@@ -11,13 +11,24 @@ class Connexion extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('nom', 'Nom de famille', 'required');
 		$this->form_validation->set_rules('date', 'Date d\'embauche', 'required');
-		if ($this->form_validation->run() == TRUE)
-        {
+
+		//Si la validation du formulaire est OK
+		if ($this->form_validation->run() == TRUE){
+			//On recherche si le visiteur est présent dans la BDD
+			$this->load->database();
 			$this->load->model('ModelPrincipal');
-			$this->ModelPrincipal->recherche_visiteur($post);
-        }
-    	else
-        {
+
+			$nb_occurences_visiteur = $this->ModelPrincipal->recherche_visiteur($_POST['nom'], $_POST['date']);
+
+			if($nb_occurences_visiteur[0]->nb_occurences == '1'){
+				//Si le visiteur est trouvé
+				echo "OK";
+			} else {
+				//Si le visiteur n'est pas trouvé
+				echo "PAS OK";
+			}
+		} else {
+			//Sinon on réaffiche le formulaire de contact avec les erreurs
 			$data['validation'] = 0;
 			$this->load->view('connexion_accueil', $data);
         }

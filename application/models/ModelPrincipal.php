@@ -8,7 +8,7 @@ class ModelPrincipal extends CI_Model {
             parent::__construct();
     }
     public function recherche_visiteur($nom, $date){
-        $query = $this->db->get("SELECT COUNT(VIS_NOM) FROM visiteur WHERE VIS_NOM = $nom AND VIS_DATEEMBAUCHE = $date;");
+        $query = $this->db->query("SELECT COUNT(VIS_NOM) as nb_occurences FROM visiteur WHERE VIS_NOM = '$nom' AND VIS_DATEEMBAUCHE = '$date 00:00:00';");
         return $query->result();
     }
 }
