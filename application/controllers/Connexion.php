@@ -18,11 +18,12 @@ class Connexion extends CI_Controller {
 			$this->load->database();
 			$this->load->model('ModelPrincipal');
 
-			$nb_occurences_visiteur = $this->ModelPrincipal->recherche_visiteur($_POST['nom'], $_POST['date']);
+			$testeur_visiteur = $this->ModelPrincipal->recherche_visiteur($_POST['nom'], $_POST['date']);
 
-			if($nb_occurences_visiteur[0]->nb_occurences == '1'){
+			if($testeur_visiteur[0]->nb_occurences == '1'){
 				//Si le visiteur est trouvé
 				echo "OK";
+				echo $testeur_visiteur[0]->matricule;
 			} else {
 				//Si le visiteur n'est pas trouvé
 				echo "PAS OK";
