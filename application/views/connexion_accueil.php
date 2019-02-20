@@ -87,6 +87,8 @@ echo doctype('html5');
 			//Si il manque une ou plusieurs informations du formulaire
 			if (isset($validation))
 				echo validation_errors(); //On affiche les erreurs de validation
+			if (isset($visiteur_introuvable))
+				echo "<p><center>Visiteur introuvable !</center></p>";
 		?>
 		</div>
 		<p class="footer">Page rendue en <strong>{elapsed_time}</strong> secondes. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>

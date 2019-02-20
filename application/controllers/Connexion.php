@@ -22,11 +22,12 @@ class Connexion extends CI_Controller {
 
 			if($testeur_visiteur[0]->nb_occurences == '1'){
 				//Si le visiteur est trouvé
-				echo "OK";
-				echo $testeur_visiteur[0]->matricule;
+				$_SESSION['matricule'] = $testeur_visiteur[0]->matricule;
+				
 			} else {
 				//Si le visiteur n'est pas trouvé
-				echo "PAS OK";
+				$data['visiteur_introuvable'] = 0;
+				$this->load->view('connexion_accueil', $data);
 			}
 		} else {
 			//Sinon on réaffiche le formulaire de contact avec les erreurs
