@@ -9,8 +9,8 @@ class Connexion extends CI_Controller {
 	public function validation_informations()
 	{
 		$this->load->library('form_validation');
-		$this->form_validation->set_rules('nom', 'Nom de famille', 'required');
-		$this->form_validation->set_rules('date', 'Date d\'embauche', 'required');
+		$this->form_validation->set_rules('nom', 'nom de famille', 'required');
+		$this->form_validation->set_rules('date', 'date d\'embauche', 'required');
 
 		//Si la validation du formulaire est OK
 		if ($this->form_validation->run() == TRUE){
