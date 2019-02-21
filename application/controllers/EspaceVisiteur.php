@@ -13,6 +13,12 @@ class EspaceVisiteur extends CI_Controller {
                 $_SESSION['msg_bonjour'] = true;
             }
 
+            //Chargement de la BDD et du modèle
+            $this->load->database();
+            $this->load->model('ModelPrincipal');
+
+            $_SESSION['visiteur'] = $this->ModelPrincipal->informations_visiteur($_SESSION['matricule']);
+            var_dump($_SESSION['visiteur']);
             //Affichage de la page d'accueil de l'EspaceVisiteur
             $this->load->view('visiteur/accueil');
 		} else {
