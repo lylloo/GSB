@@ -34,7 +34,7 @@
         }
         #body {
             margin: 0 15px 0 15px;
-            min-height: 160px;
+            min-height: 250px;
         }
         p.footer {
             text-align: right;
@@ -50,7 +50,6 @@
             box-shadow: 0 0 8px #D0D0D0;
         }
         #menu{
-            width: 180px;
             background-color: #DDD;
             border-radius: 10px;
             margin-right: 15px;
@@ -59,11 +58,15 @@
         #liste-menu{
             text-align: left;
             list-style-type: none;
-            padding: 5px 0 5px 15px;
+            padding: 5px 15px;
         }
     </style>
     <?php
         $liste = array(
+            "Utilisateur : ".$_SESSION['visiteur'][0]->VIS_NOM." ".$_SESSION['visiteur'][0]->Vis_PRENOM,
+            "Laboratoire : ".$_SESSION['visiteur'][0]->LAB_NOM,
+            "Région : ".$_SESSION['visiteur'][0]->LAB_NOM,
+            "<hr>",
             anchor('EspaceVisiteur', 'Accueil'),
             anchor('EspaceVisiteur/saisie', 'Saisie compte rendu'),
             anchor('EspaceVisiteur/consultation', 'Consulter comptes rendus'),
