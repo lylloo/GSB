@@ -9,8 +9,8 @@ class ModelPrincipal extends CI_Model {
     }
     /**
      * Recherche si un visiteur est présent dans la BDD
-     * @param $nom : nom du visiteur
-     * @param $date : date d'embauche du visiteur
+     * @param nom : nom du visiteur
+     * @param date : date d'embauche du visiteur
      * @return le nombre d'occurences
      */
     public function recherche_visiteur($nom, $date){
@@ -18,8 +18,13 @@ class ModelPrincipal extends CI_Model {
         return $query->result();
     }
 
+    /**
+     * Accède aux données du visiteur via son matricule
+     * @param matricule : matricule du visiteur connecté
+     * @return les informations du visiteur
+     */
     public function informations_visiteur($matricule){
-        
+        //EN COURS
     }
 
 }
