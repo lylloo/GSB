@@ -30,7 +30,11 @@ echo doctype('html5');
 					form_input("nomPraticient");
 					br(2);
 					form_label("date");
+					//METTRE "<input type='date' name='date'>"
 					//FIN DU FORMULAIRE
+					form_label("Motif");
+					form_input("motif");
+
 					form_close();
 
 				?>	
