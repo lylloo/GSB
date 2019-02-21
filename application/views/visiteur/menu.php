@@ -63,9 +63,10 @@
     </style>
     <?php
         $liste = array(
+            "Type de compte : ".$_SESSION['visiteur']['TRA_ROLE'],
             "Utilisateur : ".$_SESSION['visiteur'][0]->VIS_NOM." ".$_SESSION['visiteur'][0]->Vis_PRENOM,
             "Laboratoire : ".$_SESSION['visiteur'][0]->LAB_NOM,
-            "Secteur : ".$_SESSION['visiteur']['SEC_LIBELLE'],
+            "Région rattachée : ".$_SESSION['visiteur']['REG_NOM'],
             "<hr>",
             anchor('EspaceVisiteur', 'Accueil'),
             anchor('EspaceVisiteur/saisie', 'Saisie compte rendu'),

@@ -35,14 +35,14 @@ class ModelPrincipal extends CI_Model {
     }
 
     /**
-    * Accède au secteur du visiteur via son matricule
+    * Accède à la région rattachée au visiteur via son matricule
     * @param matricule : matricule du visiteur connecté
-    * @return le nom du secteur du visiteur
+    * @return le nom de la région rattachée au visiteur
     */
-    public function secteur_visiteur($matricule){
-        $query = $this->db->query("SELECT SEC_LIBELLE 
-                                    FROM secteur, visiteur 
-                                    WHERE visiteur.SEC_CODE = secteur.SEC_CODE 
+    public function region_visiteur($matricule){
+        $query = $this->db->query("SELECT REG_NOM, TRA_ROLE 
+                                    FROM travailler, region 
+                                    WHERE travailler.REG_CODE = region.REG_CODE
                                     AND VIS_MATRICULE = '$matricule';");
         return $query->result();
     }
