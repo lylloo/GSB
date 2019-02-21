@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class EspaceVisiteur extends CI_Controller {
     public function __construct()
     {
+        parent::__construct();
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {
             //Si le message "Bonjour" n'a pas été affiché avant
