@@ -65,7 +65,7 @@
         $liste = array(
             "Utilisateur : ".$_SESSION['visiteur'][0]->VIS_NOM." ".$_SESSION['visiteur'][0]->Vis_PRENOM,
             "Laboratoire : ".$_SESSION['visiteur'][0]->LAB_NOM,
-            "Région : ".$_SESSION['visiteur'][0]->REG_NOM,
+            "Secteur : ".$_SESSION['visiteur']['SEC_LIBELLE'],
             "<hr>",
             anchor('EspaceVisiteur', 'Accueil'),
             anchor('EspaceVisiteur/saisie', 'Saisie compte rendu'),
