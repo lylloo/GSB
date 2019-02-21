@@ -20,7 +20,6 @@ class EspaceVisiteur extends CI_Controller {
 
             //Informations du visiteur connecté
             $_SESSION['visiteur'] = $this->ModelPrincipal->informations_visiteur($_SESSION['matricule']);
-            
 
             $infos_sup = $this->ModelPrincipal->region_visiteur($_SESSION['matricule']);
             
