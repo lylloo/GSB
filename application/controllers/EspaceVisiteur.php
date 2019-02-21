@@ -18,15 +18,14 @@ class EspaceVisiteur extends CI_Controller {
             $this->load->database();
             $this->load->model('ModelPrincipal');
 
+            //Informations du visiteur connecté
             $_SESSION['visiteur'] = $this->ModelPrincipal->informations_visiteur($_SESSION['matricule']);
             
-            $secteur_visiteur = $this->ModelPrincipal->secteur_visiteur($_SESSION['matricule']);
+
+            $infos_sup = $this->ModelPrincipal->region_visiteur($_SESSION['matricule']);
             
-            if (empty($secteur_visiteur)) {
-                $_SESSION['visiteur']['SEC_LIBELLE'] = "Indéfini";
-            } else {
-                $_SESSION['visiteur']['SEC_LIBELLE'] = $secteur_visiteur[0]->SEC_LIBELLE;
-            }
+            $_SESSION['visiteur']['TRA_ROLE'] = $infos_sup[0]->TRA_ROLE;
+            $_SESSION['visiteur']['REG_NOM'] = $infos_sup[0]->REG_NOM;
         }
     }
 	public function index() //Accueil visiteur
