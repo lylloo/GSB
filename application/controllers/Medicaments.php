@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class EspaceVisiteur extends CI_Controller {
+class Medicaments extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
@@ -10,6 +10,7 @@ class EspaceVisiteur extends CI_Controller {
             //Chargement de la BDD et du modèle
             $this->load->database();
             $this->load->model('ModelPrincipal');
+            $this->load->model('ModelMedicaments');
 
             //Informations du visiteur connecté
             $_SESSION['visiteur'] = $this->ModelPrincipal->informations_visiteur($_SESSION['matricule']);
@@ -26,6 +27,14 @@ class EspaceVisiteur extends CI_Controller {
         if (!empty($_SESSION['matricule'])) {         
             //Affichage de la liste des médicaments
             $this->load->view('visiteur/header');
+
+            //Récupération de tous les médicaments
+            
+
+
+            //Affichage de la liste des médicaments
+            $this->load->view('visiteur/medicaments/liste_medicaments');
+
             $this->load->view('visiteur/footer');
 		} else {
             //Sinon affichage du formulaire de connexion

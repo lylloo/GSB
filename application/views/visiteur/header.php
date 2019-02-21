@@ -18,4 +18,4 @@ echo doctype('html5');
             ?>
 			<div align="justify">
 				<!-- Contenu de la page -->	
-			
+                

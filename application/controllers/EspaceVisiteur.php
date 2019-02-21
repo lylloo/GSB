@@ -82,9 +82,8 @@ class EspaceVisiteur extends CI_Controller {
     {
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {
-            //Affichage de la page de consultation des medicaments
-			$this->load->view('visiteur/header');
-            $this->load->view('visiteur/footer');
+			//Redirection vers le controlleur Medicaments
+            redirect('Medicaments');
 		} else {
             //Sinon affichage du formulaire de connexion
 			$this->load->view('connexion_accueil');
