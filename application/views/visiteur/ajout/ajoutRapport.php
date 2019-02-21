@@ -19,7 +19,20 @@ echo doctype('html5');
 			<div align="justify">
 				<!-- Contenu de la page -->
 				<?php
-					echo "test";
+					//METTRE UN ECHO QUI FINI PAR UN POINT VIRGULE ET METTRE . POUR CHAQUE ELLEMENT
+					//REMPLACER LES ; PAR DES . SAUF POUR LE DERNIER QUI EST UN ;
+					form_open("EspaceVisiteur/saisie");
+					form_label("Numero de rapport");
+					form_input("numRapport");
+					br(2);
+					form_label(" Nom du praticient");
+					//REMPACER PAR UN SCROLL , menu qui descent
+					form_input("nomPraticient");
+					br(2);
+					form_label("date");
+					//FIN DU FORMULAIRE
+					form_close();
+
 				?>	
 			</div>
 		</div>
