@@ -23,7 +23,8 @@ class Connexion extends CI_Controller {
 			if($testeur_visiteur[0]->nb_occurences == '1'){
 				//Si le visiteur est trouvé
 				$_SESSION['matricule'] = $testeur_visiteur[0]->matricule;
-				
+				//Redirection vers le controlleur EspaceClient
+				redirect('EspaceVisiteur');
 			} else {
 				//Si le visiteur n'est pas trouvé
 				$data['visiteur_introuvable'] = 0;
@@ -36,3 +37,4 @@ class Connexion extends CI_Controller {
         }
 	}
 }
+?>

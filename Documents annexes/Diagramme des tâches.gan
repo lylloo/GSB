@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Galaxy Swiss Bourdin version 3 (CodeIgniter)" company="Galaxy Swiss Bourdin" webLink="http://" view-date="2019-01-07" view-index="0" gantt-divider-location="779" resource-divider-location="300" version="2.0" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Galaxy Swiss Bourdin version 3 (CodeIgniter)" company="Galaxy Swiss Bourdin" webLink="http://" view-date="2019-01-20" view-index="0" gantt-divider-location="1106" resource-divider-location="300" version="2.0" locale="fr_FR">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="81" order="0"/>
-        <field id="tpd4" name="Date de début" width="10" order="1"/>
-        <field id="tpd5" name="Date de fin" width="8" order="2"/>
+        <field id="tpd3" name="Nom" width="67" order="0"/>
+        <field id="tpd4" name="Date de début" width="17" order="1"/>
+        <field id="tpd5" name="Date de fin" width="15" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Nom" width="50" order="0"/>
@@ -49,13 +49,13 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="7" name="(T + L) Connexion visiteur et délégué" color="#000000" meeting="false" start="2019-01-17" duration="7" complete="22" expand="true">
+        <task id="7" name="(T + L) Connexion visiteur et délégué" color="#000000" meeting="false" start="2019-01-17" duration="7" complete="66" expand="true">
             <depend id="0" type="2" difference="0" hardness="Strong"/>
             <depend id="3" type="2" difference="0" hardness="Strong"/>
             <depend id="21" type="2" difference="0" hardness="Strong"/>
             <task id="8" name="(T + L) Formulaire de connexion" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="100" expand="true"/>
-            <task id="9" name="(T + L) Contrôle des informations insérées" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="0" expand="true"/>
-            <task id="10" name="(T + L) Cryptage des données" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="0" expand="true">
+            <task id="9" name="(T + L) Contrôle des informations insérées" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="100" expand="true"/>
+            <task id="10" name="(T + L) Cryptage des données" color="#8cb6ce" meeting="false" start="2019-01-17" duration="4" complete="100" expand="true">
                 <depend id="11" type="2" difference="0" hardness="Strong"/>
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
             </task>
@@ -152,9 +152,9 @@
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="633" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="80" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="62" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="742" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="189" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="171" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
