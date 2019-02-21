@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class EspaceVisiteur extends CI_Controller {
-	public function index() //Accueil visiteur
-	{
+    public function __construct()
+    {
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {
             //Si le message "Bonjour" n'a pas été affiché avant
@@ -18,7 +18,20 @@ class EspaceVisiteur extends CI_Controller {
             $this->load->model('ModelPrincipal');
 
             $_SESSION['visiteur'] = $this->ModelPrincipal->informations_visiteur($_SESSION['matricule']);
-            var_dump($_SESSION['visiteur']);
+            
+            $secteur_visiteur = $this->ModelPrincipal->secteur_visiteur($_SESSION['matricule']);
+            
+            if (empty($secteur_visiteur)) {
+                $_SESSION['visiteur']['SEC_LIBELLE'] = "Indéfini";
+            } else {
+                $_SESSION['visiteur']['SEC_LIBELLE'] = $secteur_visiteur[0]->SEC_LIBELLE;
+            }
+        }
+    }
+	public function index() //Accueil visiteur
+	{
+        //Si le visiteur est connecté
+        if (!empty($_SESSION['matricule'])) {         
             //Affichage de la page d'accueil de l'EspaceVisiteur
             $this->load->view('visiteur/accueil');
 		} else {
