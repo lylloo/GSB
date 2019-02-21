@@ -24,7 +24,8 @@ class ModelPrincipal extends CI_Model {
      * @return les informations du visiteur
      */
     public function informations_visiteur($matricule){
-        //EN COURS
+        $query = $this->db->query("SELECT * FROM visiteur WHERE VIS_MATRICULE = '$matricule';");
+        return $query->result();
     }
 
 }

@@ -7,7 +7,8 @@ class EspaceVisiteur extends CI_Controller {
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {
             //Affichage de la page d'accueil de l'EspaceVisiteur
-			$this->load->view('visiteur/accueil');
+            $this->load->view('visiteur/accueil');
+            echo "<script>alert('Bienvenue parmis nous !');</script>";
 		} else {
             //Sinon affichage du formulaire de connexion
 			$this->load->view('connexion_accueil');
