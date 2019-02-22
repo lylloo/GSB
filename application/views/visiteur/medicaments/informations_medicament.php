@@ -13,13 +13,14 @@
         width: 155px;
     }
     tbody th, tbody td{
-        border: 1px solid black;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
         padding: 5px;
         text-align: justify;
     }
 </style>
 
-<table style="border: 1px solid black; ">
+<table>
     <thead>
         <tr><th colspan="2">Informations du médicament</th></tr>
     </thead>

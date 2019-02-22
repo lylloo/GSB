@@ -69,8 +69,8 @@
             "Région rattachée : ".$_SESSION['visiteur']['REG_NOM'],
             "<hr>",
             anchor('EspaceVisiteur', 'Accueil'),
-            anchor('EspaceVisiteur/saisie', 'Saisie compte rendu'),
-            anchor('EspaceVisiteur/consultation', 'Consulter comptes rendus'),
+            anchor('EspaceVisiteur/saisie', 'Saisie rapport de visite'),
+            anchor('EspaceVisiteur/consultation', 'Consulter rapports de visite'),
             anchor('EspaceVisiteur/praticiens', 'Consulter praticiens'),
             anchor('EspaceVisiteur/medicaments', 'Consulter médicaments'),
             anchor('EspaceVisiteur/deconnexion', 'Se déconnecter')
