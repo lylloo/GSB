@@ -44,8 +44,8 @@ class EspaceVisiteur extends CI_Controller {
     {
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {
-            //Affichage de la page de saisie de compte rendu
-			$this->load->view('visiteur/ajout/ajoutRapport');
+            //Redirection vers le controlleur Saisie
+            redirect('Saisie');
 		} else {
             //Sinon affichage du formulaire de connexion
 			$this->load->view('connexion_accueil');
@@ -57,9 +57,8 @@ class EspaceVisiteur extends CI_Controller {
     {
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {
-            //Affichage de la page de consultation de comptes rendus
-			$this->load->view('visiteur/header');
-            $this->load->view('visiteur/footer');
+            //Redirection vers le controlleur Consultation
+            redirect('Consultation');
 		} else {
             //Sinon affichage du formulaire de connexion
 			$this->load->view('connexion_accueil');
