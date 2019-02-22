@@ -17,11 +17,7 @@
         overflow: auto;
         height: 200px;
     }
-</style>
-
-<?php 
-
-?>
+</style>	
 
 <table id="tableau-neutre">
     <thead>
@@ -30,7 +26,7 @@
         </tr>
         <tr>
             <th align="center" style="width:125px;border: 1px solid black;">Nom commercial</th>
-            <th align="center">Famille</th>
+            <th align="center">Famille de médicament</th>
         </tr>
     </thead>
     <tfoot>
