@@ -60,7 +60,7 @@
                     </select>
                 <?php
                     echo 
-                        form_submit('valider', 'Rechercher', array('style' => 'margin-left:5px;')).
+                        form_submit('valider', 'Affiner', array('style' => 'margin-left:5px;')).
                         form_close().br();
                 ?>
             </td>
