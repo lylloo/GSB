@@ -9,7 +9,7 @@ class ModelSaisie extends CI_Model {
     }
     
     public function blabla(){
-        
+
     }
 }
 ?>
