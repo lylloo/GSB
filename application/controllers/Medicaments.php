@@ -40,12 +40,12 @@ class Medicaments extends CI_Controller {
 			$this->load->view('connexion_accueil');
         }
     }
-    public function selection() //Lors de la séléction d'un médicament
+    public function selection($depot_legal) //Lors de la séléction d'un médicament
     {
          //Si le visiteur est connecté
          if (!empty($_SESSION['matricule'])) {         
             //Récupération des informations du médicament séléctionné
-            $data['informations_medicament'] = $this->ModelMedicaments->informations_medicament();
+            $data['informations_medicament'] = $this->ModelMedicaments->informations_medicament($depot_legal);
 
             //Affichage de la liste des médicaments
             $this->load->view('visiteur/medicaments/informations_medicament', $data);

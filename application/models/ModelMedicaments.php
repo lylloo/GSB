@@ -21,10 +21,10 @@ class ModelMedicaments extends CI_Model {
      * @param nom_commercial est le nom commercial du médicament
      * @return les informations du médicament
      */
-    public function informations_medicament($nom_commercial){
+    public function informations_medicament($depot_legal){
         $query = $this->db->query("SELECT * FROM medicament, famille
-                                    WHERE medicament.FAM_CODE = famille.FAM_CODE;
-                                    AND medicament.MED_NOMCOMMERCIAL = $nom_commercial;");
+                                    WHERE medicament.FAM_CODE = famille.FAM_CODE
+                                    AND medicament.MED_DEPOTLEGAL = '$depot_legal';");
         return $query->result();
     }
 }
