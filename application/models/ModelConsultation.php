@@ -8,13 +8,17 @@ class ModelConsultation extends CI_Model {
             parent::__construct();
     }
     /**
-     * Liste tous les médicaments présents dans la BDD
-     * @return la liste des médicaments
+     * Liste tous les praticiens déjà vus
+     * @param matricule est le matricule du visiteur
+     * @return la liste des praticiens déjà vus
      */
-    public function liste_medicaments(){
-        $query = $this->db->query("SELECT * FROM medicament, famille
-                                    WHERE medicament.FAM_CODE = famille.FAM_CODE
-                                    ORDER BY medicament.MED_NOMCOMMERCIAL;");
+    public function liste_praticiens_deja_vus($matricule){
+        $query = $this->db->query("SELECT p.PRA_NUM, p.PRA_NOM, p.PRA_PRENOM 
+                                    FROM praticien p, rapport_visite r
+                                    WHERE p.PRA_NUM = r.PRA_NUM
+                                    AND r.VIS_MATRICULE = '$matricule' 
+                                    ORDER BY p.PRA_NOM, p.PRA_PRENOM
+                                    ASC;");
         return $query->result();
     }
 }

@@ -14,7 +14,8 @@ class ModelMedicaments extends CI_Model {
     public function liste_medicaments(){
         $query = $this->db->query("SELECT * FROM medicament, famille
                                     WHERE medicament.FAM_CODE = famille.FAM_CODE
-                                    ORDER BY medicament.MED_NOMCOMMERCIAL;");
+                                    ORDER BY medicament.MED_NOMCOMMERCIAL
+                                    ASC;");
         return $query->result();
     }
     /**
