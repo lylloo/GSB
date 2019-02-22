@@ -29,11 +29,10 @@ class Medicaments extends CI_Controller {
             $this->load->view('visiteur/header');
 
             //Récupération de tous les médicaments
-            
-
+            $data['liste_medicaments'] = $this->ModelMedicaments->liste_medicaments();
 
             //Affichage de la liste des médicaments
-            $this->load->view('visiteur/medicaments/liste_medicaments');
+            $this->load->view('visiteur/medicaments/liste_medicaments', $data);
 
             $this->load->view('visiteur/footer');
 		} else {

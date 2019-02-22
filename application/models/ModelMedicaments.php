@@ -8,16 +8,12 @@ class ModelMedicaments extends CI_Model {
             parent::__construct();
     }
     /**
-     * Recherche si un visiteur est présent dans la BDD
-     * @param nom : nom du visiteur
-     * @param date : date d'embauche du visiteur
-     * @return le nombre d'occurences
+     * Liste tous les médicaments présents dans la BDD
+     * @return la liste des médicaments
      */
-    public function recherche_visiteur($nom, $date){
-        $query = $this->db->query("SELECT COUNT(VIS_NOM) as nb_occurences, VIS_MATRICULE as matricule
-                                    FROM visiteur 
-                                    WHERE VIS_NOM = '$nom' 
-                                    AND VIS_DATEEMBAUCHE = '$date 00:00:00';");
+    public function liste_medicaments(){
+        $query = $this->db->query("SELECT * FROM medicament, famille
+                                    WHERE medicament.FAM_CODE = famille.FAM_CODE;");
         return $query->result();
     }
 }
