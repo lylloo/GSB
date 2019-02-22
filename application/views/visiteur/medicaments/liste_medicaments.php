@@ -3,10 +3,10 @@
         border-collapse: collapse;
     }
     thead, tfoot{
-        background-color: rgb(255,51,204);
+        background-color: #33adff;
     }
     tbody{
-        background-color: pink;
+        background-color: #ccebff;
     }
     #tableau-neutre{
         margin: auto;
@@ -20,7 +20,7 @@
 </style>
 
 <?php 
-    
+
 ?>
 
 <table id="tableau-neutre">
