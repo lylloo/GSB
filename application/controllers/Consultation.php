@@ -25,25 +25,12 @@ class Consultation extends CI_Controller {
 	{
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {         
-            //Affichage de la liste des médicaments
+            //Affichage de la liste des rapports de visite
             $this->load->view('visiteur/header');
 
             $data['liste_praticiens_deja_vus'] = $this->ModelConsultation->liste_praticiens_deja_vus($_SESSION['matricule']);
-            $this->load->view('visiteur/consultation/choix_rapport', $data);
+            $data['liste_rapports_de_visite']  = $this->ModelConsultation->liste_rapports_de_visite($_POST);
 
-            $this->load->view('visiteur/footer');
-		} else {
-            //Sinon affichage du formulaire de connexion
-			$this->load->view('connexion_accueil');
-        }
-    }
-    public function selection_fourchette(){
-        //Si le visiteur est connecté
-        if (!empty($_SESSION['matricule'])) {         
-            //Affichage de la liste des médicaments
-            $this->load->view('visiteur/header');
-
-            $data['liste_praticiens_deja_vus'] = $this->ModelConsultation->liste_praticiens_deja_vus($_SESSION['matricule']);
             $this->load->view('visiteur/consultation/choix_rapport', $data);
 
             $this->load->view('visiteur/footer');
