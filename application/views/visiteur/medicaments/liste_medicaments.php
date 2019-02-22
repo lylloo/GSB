@@ -42,8 +42,8 @@
                         foreach ($liste_medicaments as $libelle => $valeur) {
                     ?>
                             <tr style="border: 1px solid black;">
-                                <td style="border-right: 1px solid black; text-align: center;"><?php echo $valeur->MED_NOMCOMMERCIAL;?></td>
-                                <td style="text-align: center;"><?php echo $valeur->FAM_LIBELLE;?></td>
+                                <td style="border-right: 1px solid black; text-align: center;"><a href="EspaceVisiteur/saisie" target="wclose" onclick="window.open('Medicaments/selection','wclose', 'width=500,height=400,toolbar=no,status=no,left=300,top=100')"><?php echo $valeur->MED_NOMCOMMERCIAL;?></a></td>
+                                <td style="text-align: center;"><a href="EspaceVisiteur/saisie" target="wclose" onclick="window.open('Medicaments/selection','wclose', 'width=400,height=500,toolbar=no,status=no,left=300,top=100')"><?php echo $valeur->FAM_LIBELLE;?></a></td>
                             </tr>
                     <?php
                         }
