@@ -28,11 +28,11 @@ class Consultation extends CI_Controller {
             //Affichage de la liste des médicaments
             $this->load->view('visiteur/header');
 
-            //Récupération de tous les médicaments
-            $data['liste_medicaments'] = $this->ModelMedicaments->liste_medicaments();
+            // //Récupération de tous les médicaments
+            // $data['liste_medicaments'] = $this->ModelMedicaments->liste_medicaments();
 
-            //Affichage de la liste des médicaments
-            $this->load->view('visiteur/medicaments/liste_medicaments', $data);
+            // //Affichage de la liste des médicaments
+            // $this->load->view('visiteur/medicaments/liste_medicaments', $data);
 
             $this->load->view('visiteur/footer');
 		} else {
