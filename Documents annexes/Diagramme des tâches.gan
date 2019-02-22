@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Galaxy Swiss Bourdin version 3 (CodeIgniter)" company="Galaxy Swiss Bourdin" webLink="http://" view-date="2019-01-20" view-index="0" gantt-divider-location="1106" resource-divider-location="300" version="2.0" locale="fr_FR">
+<?xml version="1.0" encoding="UTF-8"?><project name="Galaxy Swiss Bourdin version 3 (CodeIgniter)" company="Galaxy Swiss Bourdin" webLink="http://" view-date="2019-01-23" view-index="0" gantt-divider-location="1106" resource-divider-location="300" version="2.0" locale="fr">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Nom" width="67" order="0"/>
@@ -66,7 +66,7 @@
                 <depend id="0" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
-        <task id="0" name="Partie visiteur" meeting="false" start="2019-01-24" duration="46" complete="0" expand="true">
+        <task id="0" name="Partie visiteur" meeting="false" start="2019-01-24" duration="46" complete="17" expand="true">
             <task id="21" name="(T) Saisie rapports de visites" color="#000000" meeting="false" start="2019-01-24" duration="30" complete="0" expand="true">
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
                 <task id="1" name="(T) Gérer la saisie + validation de la saisie du rapport de visite" color="#8cb6ce" meeting="false" start="2019-01-24" duration="14" complete="0" expand="true">
@@ -81,7 +81,7 @@
             </task>
             <task id="3" name="(L) Consultation des rapports de visite" color="#000000" meeting="false" start="2019-01-24" duration="30" complete="0" expand="true">
                 <depend id="6" type="2" difference="0" hardness="Strong"/>
-                <task id="17" name="(L) Gérer la recherche des rapports de visite en fonction d'une fouchette de date" color="#8cb6ce" meeting="false" start="2019-01-24" duration="10" complete="0" expand="true">
+                <task id="17" name="(L) Gérer la recherche des rapports de visite en fonction d'une fourchette de date" color="#8cb6ce" meeting="false" start="2019-01-24" duration="10" complete="0" expand="true">
                     <depend id="18" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="18" name="(L) Gérer aussi la recherche eventuellement grâce à une liste des noms des praticiens visités" color="#8cb6ce" meeting="false" start="2019-02-03" duration="5" complete="0" expand="true">
@@ -103,11 +103,11 @@
                 </task>
                 <task id="23" name="(T) Affichage des informations du praticien sélectionné" color="#8cb6ce" meeting="false" start="2019-03-03" duration="8" complete="0" expand="true"/>
             </task>
-            <task id="6" name="(L) Consulter médicament" color="#000000" meeting="false" start="2019-02-23" duration="16" complete="0" expand="true">
-                <task id="25" name="(L) Liste déroulante des médicaments" color="#8cb6ce" meeting="false" start="2019-02-23" duration="8" complete="0" expand="true">
+            <task id="6" name="(L) Consulter médicament" color="#000000" meeting="false" start="2019-02-23" duration="16" complete="100" expand="true">
+                <task id="25" name="(L) Liste déroulante des médicaments" color="#8cb6ce" meeting="false" start="2019-02-23" duration="8" complete="100" expand="true">
                     <depend id="26" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="26" name="(L) Affichage des informations du médicament sélectionné" color="#8cb6ce" meeting="false" start="2019-03-03" duration="8" complete="0" expand="true"/>
+                <task id="26" name="(L) Affichage des informations du médicament sélectionné" color="#8cb6ce" meeting="false" start="2019-03-03" duration="8" complete="100" expand="true"/>
             </task>
         </task>
     </tasks>
