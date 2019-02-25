@@ -100,7 +100,7 @@
                             foreach ($liste_rapports_de_visite as $libelle => $valeur) {
                             ?>
                                 <tr>
-                                    <td width="68px"><a href="Consultation/selection/<?php echo $valeur->RAP_NUM;?>" target="wclose" onclick="window.open('Consultation/selection/<?php echo $valeur->RAP_NUM;?>','wclose', 'width=500,height=400,toolbar=no,status=no,left=60,top=110')">N°<?php echo $valeur->RAP_NUM;?></a></td> <!-- Numéro de rapport de visite -->
+                                    <td width="68px"><a href="Consultation/selection/<?php echo $valeur->RAP_NUM;?>">N°<?php echo $valeur->RAP_NUM;?></a></td> <!-- Numéro de rapport de visite -->
                                     <td width="80px">N°<?php echo $valeur->PRA_NUM;?></td> <!-- Numéro du praticien -->
                                     <td width="90px"><?php echo $valeur->PRA_NOM;?></td> <!-- Nom du praticien -->
                                     <td width="109.5px"><?php echo $valeur->PRA_PRENOM;?></td> <!-- Pénom du praticien -->
@@ -144,3 +144,7 @@
         </tr>
     </tbody>
 </table>
+
+<div>
+	
+</div>

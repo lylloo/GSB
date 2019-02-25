@@ -63,10 +63,24 @@ class ModelConsultation extends CI_Model {
         $query = $this->db->query("SELECT *
                                     FROM offrir o, medicament m
                                     WHERE o.MED_DEPOTLEGAL = m.MED_DEPOTLEGAL
-                                    AND o.RAP_NUM = '4'
+                                    AND o.RAP_NUM = '".$num_rapport."'
                                     ORDER BY m.MED_NOMCOMMERCIAL
                                     ASC;");
         return $query->result();
     }
+    /**
+     * Liste les informations d'un rapport de visite sélectionné
+     * @param num_rapport est le numéro du rapport de visite
+     * @return la liste des informations du rapport de visite
+     */
+    public function informations_rapport_de_visite($num_rapport){
+        $query = $this->db->query("SELECT *
+                                    FROM praticien p, rapport_visite r
+                                    WHERE p.PRA_NUM = r.PRA_NUM
+                                    AND r.RAP_NUM = '".$num_rapport."'
+                                    DESC;");
+        return $query->result();
+    }
+
 }
 ?>

@@ -21,18 +21,51 @@ class Consultation extends CI_Controller {
             $_SESSION['visiteur']['REG_NOM'] = $infos_sup[0]->REG_NOM;
         }
     }
-	public function index() //Accueil Médicaments
+	public function index() //Accueil Consultation
 	{
         //Si le visiteur est connecté
         if (!empty($_SESSION['matricule'])) {         
-            //Affichage de la liste des rapports de visite
+            //Affichage du header
             $this->load->view('visiteur/header');
 
+            //On récupère la liste des praticiens déjà vus
             $data['liste_praticiens_deja_vus'] = $this->ModelConsultation->liste_praticiens_deja_vus($_SESSION['matricule']);
+            //On récupère la liste des rapports de visite en fonction de la recherche
             $data['liste_rapports_de_visite']  = $this->ModelConsultation->liste_rapports_de_visite($_POST);
-
+            
+            //Affichage de la liste des rapports de visite
             $this->load->view('visiteur/consultation/choix_rapport', $data);
 
+            //Affichage du footer
+            $this->load->view('visiteur/footer');
+		} else {
+            //Sinon affichage du formulaire de connexion
+			$this->load->view('connexion_accueil');
+        }
+    }
+    public function selection($num_rapport) //Sélection d'un rapport de visite
+	{
+        //Si le visiteur est connecté
+        if (!empty($_SESSION['matricule'])) {         
+            //Affichage du header
+            $this->load->view('visiteur/header');
+
+            //On récupère la liste des praticiens déjà vus
+            $data['liste_praticiens_deja_vus'] = $this->ModelConsultation->liste_praticiens_deja_vus($_SESSION['matricule']);
+            //On récupère la liste des rapports de visite en fonction de la recherche
+            $data['liste_rapports_de_visite']  = $this->ModelConsultation->liste_rapports_de_visite($_POST);
+            
+            //Affichage de la liste des rapports de visite
+            $this->load->view('visiteur/consultation/choix_rapport', $data);
+
+            //Si le visiteur a sélectionné un rapport de visite
+            if (isset($selection)) {
+                $data['informations_rapport'] = $this->ModelConsultation->informations_rapport_de_visite($selection);
+
+                $this->load->view('visiteur/consultation/affichage_rapport', $data);
+            }
+
+            //Affichage du footer
             $this->load->view('visiteur/footer');
 		} else {
             //Sinon affichage du formulaire de connexion
