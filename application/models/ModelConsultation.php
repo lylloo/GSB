@@ -63,7 +63,7 @@ class ModelConsultation extends CI_Model {
         $query = $this->db->query("SELECT *
                                     FROM offrir o, medicament m
                                     WHERE o.MED_DEPOTLEGAL = m.MED_DEPOTLEGAL
-                                    AND o.RAP_NUM = '4'
+                                    AND o.RAP_NUM = '".$num_rapport."'
                                     ORDER BY m.MED_NOMCOMMERCIAL
                                     ASC;");
         return $query->result();
