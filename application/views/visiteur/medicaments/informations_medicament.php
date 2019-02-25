@@ -1,4 +1,7 @@
 <style>
+    body{
+        margin:0;
+    }
     table{
         border-collapse: collapse;
     }
