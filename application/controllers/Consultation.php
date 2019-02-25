@@ -59,8 +59,8 @@ class Consultation extends CI_Controller {
             $this->load->view('visiteur/consultation/choix_rapport', $data);
 
             //Si le visiteur a sélectionné un rapport de visite
-            if (isset($selection)) {
-                $data['informations_rapport'] = $this->ModelConsultation->informations_rapport_de_visite($selection);
+            if (isset($num_rapport)) {
+                $data['informations_rapport'] = $this->ModelConsultation->informations_rapport_de_visite($num_rapport);
 
                 $this->load->view('visiteur/consultation/affichage_rapport', $data);
             }

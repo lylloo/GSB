@@ -100,7 +100,25 @@
                             foreach ($liste_rapports_de_visite as $libelle => $valeur) {
                             ?>
                                 <tr>
-                                    <td width="68px"><a href="Consultation/selection/<?php echo $valeur->RAP_NUM;?>">N°<?php echo $valeur->RAP_NUM;?></a></td> <!-- Numéro de rapport de visite -->
+                                    <td width="68px"><!-- Numéro de rapport de visite -->
+                                        <?php echo form_open('Consultation/selection/'.$valeur->RAP_NUM);?>
+                                        <input type="hidden" name="debut" value="<?php echo $_POST['debut'];?>">
+                                        <input type="hidden" name="fin" value="<?php echo $_POST['fin'];?>">
+                                        <input type="hidden" name="praticien" value="<?php echo $_POST['praticien'];?>">
+                                        <?php 
+                                            if (isset($_POST['tout'])) {
+                                        ?>
+                                                <input type="hidden" name="tout" value="Tous les rapports">
+                                        <?php
+                                            } else {
+                                        ?>
+                                                <input type="hidden" name="valider" value="Affiner">
+                                        <?php
+                                            }   
+                                        ?>
+                                        <button type="submit">N°<?php echo $valeur->RAP_NUM;?></button>
+                                        <?php echo form_close();?>
+                                    </td>
                                     <td width="80px">N°<?php echo $valeur->PRA_NUM;?></td> <!-- Numéro du praticien -->
                                     <td width="90px"><?php echo $valeur->PRA_NOM;?></td> <!-- Nom du praticien -->
                                     <td width="109.5px"><?php echo $valeur->PRA_PRENOM;?></td> <!-- Pénom du praticien -->
@@ -144,7 +162,3 @@
         </tr>
     </tbody>
 </table>
-
-<div>
-	
-</div>
