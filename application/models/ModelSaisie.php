@@ -8,8 +8,8 @@ class ModelSaisie extends CI_Model {
             parent::__construct();
     }
     
-    public function blabla(){
-
+    public function rechercheRapport(){
+    	
     }
 }
 ?>
