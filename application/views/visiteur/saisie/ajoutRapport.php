@@ -75,7 +75,7 @@
             <th width="90px">Nom praticien</th>
             <th width="110px">Prénom praticien</th>
             <th width="150px">Motif de visite</th>
-            <!--<th width="80px">Date de visite</th>-->
+            <th width="80px">Date de visite</th>
             <th>Médicaments présentés</th>
             <th> Modifier le rapport </th>
         </tr>
@@ -89,16 +89,48 @@
 			<?php
 				if($liste_rapport_pas_valider!=null){
 					foreach($liste_rapport_pas_valider as $libelle =>$laValeur){
-						echo "<tr>";
- 						echo '<td width="68px">N'.$laValeur->RAP_NUM;
- 							echo "</td>";
- 						echo "</tr>";
+			?>
+						<tr>
+ 							<td width="80px">N'<?php echo $laValeur->RAP_NUM;?></td>
+ 							<td width="80px"> <?php echo $laValeur->PRA_NUM;?></td>
+ 							<td width="90px"> <?php echo $laValeur->PRA_NOM; ?> </td>
+ 							<td width="109.5px"><?php echo $laValeur->PRA_PRENOM; ?> </td>
+ 							<td width="149.5px"><?php echo $laValeur->RAP_MOTIF;?></td>
+ 							<td width="79.5px"><?php echo $laValeur->RAP_DATE;?></td>
+ 							 <td width="225px">
+                                        <?php
+                                            $liste_medicaments_presentes = $this->ModelConsultation->liste_medicaments_presentes($laValeur->RAP_NUM);
 
- 						echo "<tr>";
- 							echo '<td width="80px">'.$laValeur->PRA_NUM;
- 							echo "</td>";
- 						echo "</tr>";
+                                            if ($liste_medicaments_presentes != null) {
+                                        ?>
+                                                <select>
+                                                <?php
+                                                    foreach ($liste_medicaments_presentes as $libelle => $laValeur) {
+                                                ?>
+                                                    <option><?php echo $laValeur->MED_DEPOTLEGAL." - ".$laValeur->MED_NOMCOMMERCIAL;?></option>
+                                                <?php
+                                                    }
+                                                ?>
+                                                </select>
+                                        <?php 
+                                            } else {
+                                                echo "Aucun";
+                                            }
+                                            
+                                        ?>
+                                </td>
+ 						</tr>
+ 						<?php
 					}
+				}
+				else{
+					?>
+					<tr>
+							<td>
+								<?php echo "Aucun rapport en cours";?>
+							</td>
+					</tr>
+					<?php
 				}
 			?>
 		</td>

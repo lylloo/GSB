@@ -11,6 +11,7 @@ class Saisie extends CI_Controller {
             $this->load->database();
             $this->load->model('ModelPrincipal');
             $this->load->model('ModelSaisie');
+          $this->load->model('ModelConsultation');
 
             //Informations du visiteur connecté
             $_SESSION['visiteur'] = $this->ModelPrincipal->informations_visiteur($_SESSION['matricule']);
