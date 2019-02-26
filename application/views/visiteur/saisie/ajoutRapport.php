@@ -27,12 +27,37 @@
 		*/
 ?>
 <style>
+	form{
+        text-align:center;
+    }
+    table{
+        border-collapse: collapse;
+    }
+    thead, tfoot{
+        background-color: #33adff;
+    }
+    tbody{
+        background-color: #ccebff;
+    }
+    thead th{
+        border: 1px solid black;
+        text-align: center;
+    }
+    tbody td{
+        border: 1px solid black;
+    }
 	.tableau-neutre{
         margin: auto;
         width: 850px;
     }
-
+    .tableau-scroll{
+    	display: inline-block;
+        overflow: auto;
+        max-height: 200px;
+        text-align: center;
+    }
 </style>
+
 <table class="tableau-neutre">
 	<thead>
 		 <tr>
@@ -55,4 +80,61 @@
             <th> Modifier le rapport </th>
         </tr>
 	</thead>
+
+	<?php
+		$liste_rapport_pas_valider = $this->ModelSaisie->rechercheRapport();
+	?>
+	<tbody>
+		<td colspan="7">
+			<?php
+				if($liste_rapport_pas_valider!=null){
+					foreach($liste_rapport_pas_valider as $libelle =>$laValeur){
+						echo "<tr>";
+ 						echo '<td width="68px">N'.$laValeur->RAP_NUM;
+ 							echo "</td>";
+ 						echo "</tr>";
+
+ 						echo "<tr>";
+ 							echo '<td width="80px">'.$laValeur->PRA_NUM;
+ 							echo "</td>";
+ 						echo "</tr>";
+					}
+				}
+			?>
+		</td>
+	</tbody>
+
 </table>
+
+	 
+<!--</table>
+<?php
+	//APPELLER LA FONCTION
+   //$liste_rapport_pas_valider = $this->ModelSaisie->rechercheRapport();
+   	//FONCTIONNE LE VAR_DUMP
+   	//var_dump($liste_rapport_pas_valider);
+ ?>-->
+ <!--<tbody>
+ 	<td colspan="7">
+ 		<table class="tableau-scroll">
+ 			<?php
+ 			//SI IL EXISTE DES RAPPORT NON VALDIER
+ 				//if($liste_rapport_pas_valider!=null){
+ 					//foreach($liste_rapport_pas_valider as $libelle =>$laValeur){
+ 						//NUMERO DU RAPPORT
+ 						//echo "<tr>";
+ 							/*echo '<td width="68px">N'.$laValeur->RAP_NUM;
+ 							echo "</td>";
+ 						echo "</tr>";
+
+ 						//NUMERO DU PRATICIENT 
+ 						echo "<tr>";
+ 							echo '<td width="80px">'.$laValeur->PRA_NUM;
+ 							echo "</td>";
+ 						echo "</tr>";*/
+ 					//}
+ 				//}
+ 			?>
+ 		</table>
+ 	</td>
+ </tbody>-->

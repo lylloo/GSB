@@ -14,12 +14,12 @@ class ModelSaisie extends CI_Model {
     */
     public function rechercheRapport(){
     	$query = $this->db->query("SELECT *
-                                    FROM praticien p, rapport_visite r
-                                    WHERE p.PRA_NUM = r.PRA_NUM
-                                    AND ETAT_ID==1
-                                    AND r.VIS_MATRICULE = '".$_SESSION['matricule']."'
-                                    $sql
-                                    
+                                    FROM rapport_visite r, etat e , praticien p
+                                    WHERE r.ETAT_ID = e.ETAT_ID
+                                    AND p.PRA_NUM = r.PRA_NUM
+                                    AND r.ETAT_ID=1
+                                    AND r.VIS_MATRICULE='".$_SESSION['matricule']."'
+                                    ORDER BY r.RAP_DATE DESC;
                                     ");
     	return $query->result();
     }
