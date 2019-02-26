@@ -77,8 +77,7 @@ class ModelConsultation extends CI_Model {
         $query = $this->db->query("SELECT *
                                     FROM praticien p, rapport_visite r
                                     WHERE p.PRA_NUM = r.PRA_NUM
-                                    AND r.RAP_NUM = '".$num_rapport."'
-                                    DESC;");
+                                    AND r.RAP_NUM = '".$num_rapport."';");
         return $query->result();
     }
 
