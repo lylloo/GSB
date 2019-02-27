@@ -25,6 +25,7 @@
 		form_submit("Valider","Ajouter").
 		form_close();
 		*/
+        $this->load->helper('url');
 ?>
 <style>
 	form{
@@ -129,7 +130,7 @@
                                 </td>
 
                                 <!-- BOUTON POUR MODIFIER LE RAPPORT OU LE VALIDER-->
-                                <td> <?php  echo form_open("EspaceVisiteur/saisie").form_submit("Modifier","Modifier"); ?></td>
+                                <td> <?php   echo anchor('Saisie/modifier', 'modifier');?></td>
  						</tr>
  						<?php
 					}
@@ -143,7 +144,8 @@
 					</tr>
 					<?php
 				}
-                echo form_open("EspaceVisiteur/saisie").form_submit("Nouveau","Nouveau rapport");
+                // echo form_open("EspaceVisiteur/saisie").form_submit("Nouveau","Nouveau rapport");
+                echo anchor('Saisie/ajout', 'nouveau rapport ');
 			?>
 		</td>
 	</tbody>

@@ -23,5 +23,15 @@ class ModelSaisie extends CI_Model {
                                     ");
     	return $query->result();
     }
+
+    /**
+    * Recupere id d'un rapport
+    */
+    public function idRapport(){
+        $query = $this->db->query("SELECT RAP_NUM
+                                    FROM rapport_visite;
+                                    ");
+        return $query->result();
+    }
 }
 ?>

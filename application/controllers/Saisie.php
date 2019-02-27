@@ -41,5 +41,42 @@ class Saisie extends CI_Controller {
 			$this->load->view('connexion_accueil');
         }
     }
+
+    public function modifier(){
+         if (!empty($_SESSION['matricule'])) {         
+            //Affichage de la liste des médicaments
+            $this->load->view('visiteur/header');
+
+            //Affichage de la page de saisie de compte rendu
+            $this->load->view('visiteur/saisie/modifierRapport');
+
+            //AJOUT NOUVEAU RAPPORT
+            //$this->load->view('visiteur/saisie/ajoutRapport');
+
+            $this->load->view('visiteur/footer');
+        } else {
+            //Sinon affichage du formulaire de connexion
+            $this->load->view('connexion_accueil');
+        }
+    }
+
+    public function ajout(){
+             if (!empty($_SESSION['matricule'])) {         
+            //Affichage de la liste des médicaments
+            $this->load->view('visiteur/header');
+
+            //Affichage de la page de saisie de compte rendu
+            $this->load->view('visiteur/saisie/ajoutRapport');
+
+            //AJOUT NOUVEAU RAPPORT
+            //$this->load->view('visiteur/saisie/ajoutRapport');
+
+            $this->load->view('visiteur/footer');
+        } else {
+            //Sinon affichage du formulaire de connexion
+            $this->load->view('connexion_accueil');
+        }
+    }
+    
 }
 ?>
