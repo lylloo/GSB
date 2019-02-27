@@ -30,7 +30,10 @@ class Saisie extends CI_Controller {
             $this->load->view('visiteur/header');
 
             //Affichage de la page de saisie de compte rendu
-			$this->load->view('visiteur/saisie/ajoutRapport');
+			$this->load->view('visiteur/saisie/liste_rapport');
+
+            //AJOUT NOUVEAU RAPPORT
+            //$this->load->view('visiteur/saisie/ajoutRapport');
 
             $this->load->view('visiteur/footer');
 		} else {
