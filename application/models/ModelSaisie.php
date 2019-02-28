@@ -19,7 +19,7 @@ class ModelSaisie extends CI_Model {
                                     AND p.PRA_NUM = r.PRA_NUM
                                     AND r.ETAT_ID=1
                                     AND r.VIS_MATRICULE='".$_SESSION['matricule']."'
-                                    ORDER BY r.RAP_DATE DESC;
+                                    ORDER BY r.RAP_DATE ASC;
                                     ");
     	return $query->result();
     }
@@ -29,9 +29,22 @@ class ModelSaisie extends CI_Model {
     */
     public function idRapport(){
         $query = $this->db->query("SELECT RAP_NUM
-                                    FROM rapport_visite;
+                                    FROM rapport_visite r
+                                    WHERE r.VIS_MATRICULE='".$_SESSION['matricule']."'
+                                    ORDER BY r.RAP_NUM ASC;
                                     ");
         return $query->result();
     }
+
+    /**
+    * voir tous les praticient
+    */
+    public function toutPraticien(){
+        $query = $this->db->query("SELECT *
+                                    FROM praticien;
+                                    ");
+        return $query->result();
+    }
+
 }
 ?>

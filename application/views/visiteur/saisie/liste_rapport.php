@@ -153,34 +153,3 @@
 </table>
 
 	 
-<!--</table>
-<?php
-	//APPELLER LA FONCTION
-   //$liste_rapport_pas_valider = $this->ModelSaisie->rechercheRapport();
-   	//FONCTIONNE LE VAR_DUMP
-   	//var_dump($liste_rapport_pas_valider);
- ?>-->
- <!--<tbody>
- 	<td colspan="7">
- 		<table class="tableau-scroll">
- 			<?php
- 			//SI IL EXISTE DES RAPPORT NON VALDIER
- 				//if($liste_rapport_pas_valider!=null){
- 					//foreach($liste_rapport_pas_valider as $libelle =>$laValeur){
- 						//NUMERO DU RAPPORT
- 						//echo "<tr>";
- 							/*echo '<td width="68px">N'.$laValeur->RAP_NUM;
- 							echo "</td>";
- 						echo "</tr>";
-
- 						//NUMERO DU PRATICIENT 
- 						echo "<tr>";
- 							echo '<td width="80px">'.$laValeur->PRA_NUM;
- 							echo "</td>";
- 						echo "</tr>";*/
- 					//}
- 				//}
- 			?>
- 		</table>
- 	</td>
- </tbody>-->
