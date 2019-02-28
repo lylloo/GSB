@@ -102,9 +102,9 @@
                                 <tr>
                                     <td width="68px"><!-- Numéro de rapport de visite -->
                                         <?php echo form_open('Consultation/selection/'.$valeur->RAP_NUM);?>
-                                        <input type="hidden" name="debut" value="<?php echo $_POST['debut'];?>">
-                                        <input type="hidden" name="fin" value="<?php echo $_POST['fin'];?>">
-                                        <input type="hidden" name="praticien" value="<?php echo $_POST['praticien'];?>">
+                                        <input type="hidden" name="debut" value="<?php if(isset($_POST['debut'])){echo $_POST['debut'];}?>">
+                                        <input type="hidden" name="fin" value="<?php if(isset($_POST['fin'])){echo $_POST['fin'];}?>">
+                                        <input type="hidden" name="praticien" value="<?php if(isset($_POST['praticien'])){echo $_POST['praticien'];}?>">
                                         <?php 
                                             if (isset($_POST['tout'])) {
                                         ?>
