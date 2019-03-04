@@ -80,6 +80,5 @@ class ModelConsultation extends CI_Model {
                                     AND r.RAP_NUM = '".$num_rapport."';");
         return $query->result();
     }
-
 }
 ?>
