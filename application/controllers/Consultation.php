@@ -72,5 +72,19 @@ class Consultation extends CI_Controller {
 			$this->load->view('connexion_accueil');
         }
     }
+    public function praticien($num_praticien) //Affichage des informations du praticien
+    {
+         //Si le visiteur est connecté
+         if (!empty($_SESSION['matricule'])) {         
+            //Récupération des informations du praticien séléctionné
+            $data['informations_praticien'] = $this->ModelConsultation->informations_praticien($num_praticien);
+
+            //Affichage des informations du praticien
+            $this->load->view('visiteur/consultation/informations_praticien', $data);
+		} else {
+            //Sinon affichage du formulaire de connexion
+			$this->load->view('connexion_accueil');
+        }
+    }
 }
 ?>

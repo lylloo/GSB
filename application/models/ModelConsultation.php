@@ -80,5 +80,17 @@ class ModelConsultation extends CI_Model {
                                     AND r.RAP_NUM = '".$num_rapport."';");
         return $query->result();
     }
+    /**
+     * Liste les informations du praticien séléctionné
+     * @param num_praticien est le numéro du praticien
+     * @return les informations du praticien
+     */
+    public function informations_praticien($num_praticien){
+        $query = $this->db->query("SELECT *
+                                    FROM praticien, engine_praticien
+                                    WHERE PRA_NUM = '$num_praticien'
+                                    AND praticien.TYP_CODE = engine_praticien.TYP_CODE;");
+        return $query->result();
+    }
 }
 ?>

@@ -106,7 +106,7 @@
                                         <input type="hidden" name="fin" value="<?php if(isset($_POST['fin'])){echo $_POST['fin'];}?>">
                                         <input type="hidden" name="praticien" value="<?php if(isset($_POST['praticien'])){echo $_POST['praticien'];}?>">
                                         <?php 
-                                            if (isset($_POST['tout'])) {
+                                            if (isset($_POST['tout']) || (!isset($_POST['tout']) && !isset($_POST['valider']))) {
                                         ?>
                                                 <input type="hidden" name="tout" value="Tous les rapports">
                                         <?php
