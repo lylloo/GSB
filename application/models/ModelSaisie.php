@@ -46,5 +46,18 @@ class ModelSaisie extends CI_Model {
         return $query->result();
     }
 
+    /* VOIR TOUS LES MOTIF DE LA VISITE  */
+    /**
+    * afficher les motif de la visite
+    *@return tous les motif de la visite 
+    */
+
+    public function motif(){
+        $query = $this->db->query(" SELECT RAP_MOTIF
+                                    FROM rapport_visite;
+                                   ");
+        return $query->result();
+    }
+
 }
 ?>
