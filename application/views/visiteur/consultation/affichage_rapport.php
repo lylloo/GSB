@@ -9,12 +9,37 @@
     .table-details tfoot{
         text-align: center;
     }
+    thead th{
+        border-top: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        border-bottom: 0;
+    }
+    thead h3{
+        margin:0;
+        position:relative;
+        top:13px;
+    }
+    #pdf{
+        text-align:right;
+        border-top: 0;
+        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+    }
+    #pdf button{
+        position:relative;
+        bottom:11px;
+    }
 </style>
 <br>
 <table id="tableau-neutre" class="table-details">
     <thead>
         <tr>
-            <th colspan="2">Informations du rapport de visite n°<?php echo $informations_rapport[0]->RAP_NUM;?></th>
+            <th colspan="2"><h3>Informations du rapport de visite n°<?php echo $informations_rapport[0]->RAP_NUM;?></h3></th>
+        </tr>
+        <tr id="pdf">
+            <td colspan="2"><a href="../../Consultation/pdf/<?php echo $informations_rapport[0]->RAP_NUM;?>/<?php echo $informations_rapport[0]->PRA_NUM;?>" target="_BLANK"><button>Générer PDF</button></a></td>
         </tr>
     </thead>
     <tbody>

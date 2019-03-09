@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Galaxy Swiss Bourdin version 3 (CodeIgniter)" company="Galaxy Swiss Bourdin" webLink="http://" view-date="2019-01-23" view-index="0" gantt-divider-location="1106" resource-divider-location="300" version="2.0" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Galaxy Swiss Bourdin version 3 (CodeIgniter)" company="Galaxy Swiss Bourdin" webLink="http://" view-date="2019-03-01" view-index="0" gantt-divider-location="1106" resource-divider-location="300" version="2.0" locale="fr">
     <description/>
     <view zooming-state="default:2" id="gantt-chart">
         <field id="tpd3" name="Nom" width="67" order="0"/>
@@ -66,7 +66,7 @@
                 <depend id="0" type="2" difference="0" hardness="Strong"/>
             </task>
         </task>
-        <task id="0" name="Partie visiteur" meeting="false" start="2019-01-24" duration="46" complete="17" expand="true">
+        <task id="0" name="Partie visiteur" meeting="false" start="2019-01-24" duration="46" complete="50" expand="true">
             <task id="21" name="(T) Saisie rapports de visites" color="#000000" meeting="false" start="2019-01-24" duration="30" complete="0" expand="true">
                 <depend id="5" type="2" difference="0" hardness="Strong"/>
                 <task id="1" name="(T) Gérer la saisie + validation de la saisie du rapport de visite" color="#8cb6ce" meeting="false" start="2019-01-24" duration="14" complete="0" expand="true">
@@ -79,21 +79,21 @@
                     <depend id="5" type="2" difference="0" hardness="Strong"/>
                 </task>
             </task>
-            <task id="3" name="(L) Consultation des rapports de visite" color="#000000" meeting="false" start="2019-01-24" duration="30" complete="0" expand="true">
+            <task id="3" name="(L) Consultation des rapports de visite" color="#000000" meeting="false" start="2019-01-24" duration="30" complete="100" expand="true">
                 <depend id="6" type="2" difference="0" hardness="Strong"/>
-                <task id="17" name="(L) Gérer la recherche des rapports de visite en fonction d'une fourchette de date" color="#8cb6ce" meeting="false" start="2019-01-24" duration="10" complete="0" expand="true">
+                <task id="17" name="(L) Gérer la recherche des rapports de visite en fonction d'une fourchette de date" color="#8cb6ce" meeting="false" start="2019-01-24" duration="9" complete="100" expand="true">
                     <depend id="18" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="18" name="(L) Gérer aussi la recherche eventuellement grâce à une liste des noms des praticiens visités" color="#8cb6ce" meeting="false" start="2019-02-03" duration="5" complete="0" expand="true">
+                <task id="18" name="(L) Gérer aussi la recherche eventuellement grâce à une liste des noms des praticiens visités" color="#8cb6ce" meeting="false" start="2019-02-02" duration="5" complete="100" expand="true">
                     <depend id="19" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="19" name="(L) Liste des rapports de visite triés par date (num rapport, num et nom praticien, motif visite, date visite, codes et noms médicaments)" color="#8cb6ce" meeting="false" start="2019-02-08" duration="5" complete="0" expand="true">
+                <task id="19" name="(L) Liste des rapports de visite triés par date (num rapport, num et nom praticien, motif visite, date visite, codes et noms médicaments)" color="#8cb6ce" meeting="false" start="2019-02-07" duration="6" complete="100" expand="true">
                     <depend id="20" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="20" name="(L) Gérer les cas d'erreurs" color="#8cb6ce" meeting="false" start="2019-02-13" duration="5" complete="0" expand="true">
+                <task id="20" name="(L) Gérer les cas d'erreurs" color="#8cb6ce" meeting="false" start="2019-02-13" duration="5" complete="100" expand="true">
                     <depend id="4" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="4" name="(L) Consulter un rapport de visite" color="#8cb6ce" meeting="false" start="2019-02-18" duration="5" complete="0" expand="true">
+                <task id="4" name="(L) Consulter un rapport de visite" color="#8cb6ce" meeting="false" start="2019-02-18" duration="5" complete="100" expand="true">
                     <depend id="6" type="2" difference="0" hardness="Strong"/>
                 </task>
             </task>
