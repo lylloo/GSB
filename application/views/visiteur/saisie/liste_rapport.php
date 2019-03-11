@@ -130,7 +130,10 @@
                                 </td>
 
                                 <!-- BOUTON POUR MODIFIER LE RAPPORT OU LE VALIDER-->
-                                <td> <?php   echo anchor('Saisie/modifier', 'modifier');?></td>
+                                <!--<td> <?php   //echo anchor('Saisie/modifier', 'modifier');?></td>-->
+                                <td>
+                                    <button type="submit">Modifier<?php  $laValeur->RAP_NUM;?></button>
+                                </td>
  						</tr>
  						<?php
 					}
