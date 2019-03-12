@@ -20,9 +20,12 @@
         <!-- DATE -->
         <tr>
         	<th>Date du rapport :</th>
+        	<th> Modifier la date </th>
         </tr>
         <tr>
         	 <td><?php echo date_format(date_create($informations_rapport[0]->RAP_DATE), 'd/m/Y');?></td>
+        	 
+        	 <td><input type="date" id="date"> </td>
         </tr>
-   
+   		
  </table>

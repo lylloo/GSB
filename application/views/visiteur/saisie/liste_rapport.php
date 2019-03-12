@@ -75,8 +75,9 @@
             <th width="80px">N° praticien</th>
             <th width="90px">Nom praticien</th>
             <th width="110px">Prénom praticien</th>
-            <th width="150px">Motif de visite</th>
             <th width="80px">Date de visite</th>
+            <th width="150px">Motif de visite</th>
+            <th width="180px"> Bilan</th>
             <th>Médicaments présentés</th>
             <th> Modifier le rapport </th>
         </tr>
@@ -101,11 +102,13 @@
  							<td width="90px"> <?php echo $laValeur->PRA_NOM; ?> </td>
                              <!-- PRENOM DU PRATICIENT -->
  							<td width="109.5px"><?php echo $laValeur->PRA_PRENOM; ?> </td>
+                            <td width="79.5px"><?php echo date_format(date_create($laValeur->RAP_DATE), 'd/m/Y');?></td>
                              <!-- MOTIF DU RAPPORT -->
  							<td width="149.5px"><?php echo $laValeur->RAP_MOTIF;?></td>
+                            <td width="140.5px"><?php echo $laValeur->RAP_BILAN;?></td>
                              <!-- DATE RAPPORT-->
  							<!--<td width="79.5px"><?php //echo $laValeur->RAP_DATE;?></td>-->
-                             <td width="79.5px"><?php echo date_format(date_create($laValeur->RAP_DATE), 'd/m/Y');?></td>
+                             
 
  							 <td width="225px">
                                         <?php
