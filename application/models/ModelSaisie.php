@@ -27,14 +27,21 @@ class ModelSaisie extends CI_Model {
     /**
     * Recupere id d'un rapport
     */
+   /* public function idRapport($numRapport){
+        $query = $this->db->query("SELECT RAP_NUM
+                                    FROM rapport_visite r
+                                    WHERE r.VIS_MATRICULE='".$_SESSION['matricule']."'
+                                    AND r.RAP_NUM = '".$numRappoort."';");
+        return $query->result();
+    }*/
     public function idRapport(){
         $query = $this->db->query("SELECT RAP_NUM
                                     FROM rapport_visite r
                                     WHERE r.VIS_MATRICULE='".$_SESSION['matricule']."'
-                                    ORDER BY r.RAP_NUM ASC;
-                                    ");
+                                    ORDER BY r.RAP_NUM asc;");
         return $query->result();
     }
+    
 
     /**
     * voir tous les praticient
