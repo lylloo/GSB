@@ -42,23 +42,7 @@ class Saisie extends CI_Controller {
         }
     }
 
-    public function modifier(){
-         if (!empty($_SESSION['matricule'])) {         
-            //Affichage de la liste des médicaments
-            $this->load->view('visiteur/header');
-
-            //Affichage de la page de saisie de compte rendu
-            $this->load->view('visiteur/saisie/modifierRapport');
-
-            //AJOUT NOUVEAU RAPPORT
-            //$this->load->view('visiteur/saisie/ajoutRapport');
-
-            $this->load->view('visiteur/footer');
-        } else {
-            //Sinon affichage du formulaire de connexion
-            $this->load->view('connexion_accueil');
-        }
-    }
+ 
 
     public function ajout(){
              if (!empty($_SESSION['matricule'])) {         
@@ -78,17 +62,18 @@ class Saisie extends CI_Controller {
         }
     }
 
-    public function choix(){
+    public function choix($num_rapport){
 
          if (!empty($_SESSION['matricule'])) {         
             //Affichage de la liste des médicaments
-            $this->load->view('visiteur/header');
+             $this->load->view('visiteur/header');
 
-            //Affichage de la page de saisie de compte rendu
-            $this->load->view('visiteur/saisie/modifierRapport');
-
-            //AJOUT NOUVEAU RAPPORT
-            //$this->load->view('visiteur/saisie/ajoutRapport');
+            if (isset($num_rapport)) {
+                //RECUPERE LES INFO DU RAPPORT PAR RAPPORT AU NUMERO DE RAPPORT
+                $data['informations_rapport'] = $this->ModelConsultation->informations_rapport_de_visite($num_rapport);
+                $data['liste_medicaments_presentes'] = $this->ModelConsultation->liste_medicaments_presentes($num_rapport);
+                $this->load->view('visiteur/saisie/modifierRapport', $data);
+            }
 
             $this->load->view('visiteur/footer');
         } else {
@@ -96,6 +81,8 @@ class Saisie extends CI_Controller {
             $this->load->view('connexion_accueil');
         }
     }
+
+    
     
 }
 ?>
