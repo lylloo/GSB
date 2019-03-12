@@ -129,8 +129,27 @@
                                         ?>
                                 </td>
 
+                                <td width="68px"><!-- Numéro de rapport de visite -->
+                                        <?php echo form_open('Saisie/choix/'.$laValeur->RAP_NUM);?>
+                                       <!-- <input type="hidden" name="debut" value="<?php //if(isset($_POST['debut'])){echo $_POST['debut'];}?>">-->
+                                       <!-- <input type="hidden" name="fin" value="<?php //if(isset($_POST['fin'])){echo $_POST['fin'];}?>">-->
+                                        <!--<input type="hidden" name="praticien" value="<?php //if(isset($_POST['praticien'])){echo $_POST['praticien'];}?>">-->
+                                        <?php 
+                                            //if (isset($_POST['tout']) || (!isset($_POST['tout']) && !isset($_POST['valider']))) {
+                                        ?>
+                                              <!--  <input type="hidden" name="tout" value="Tous les rapports">-->
+                                        <?php
+                                            //} else {
+                                        ?>
+                                              <!--  <input type="hidden" name="valider" value="Affiner">-->
+                                        <?php
+                                            //}   
+                                        ?>
+                                        <button type="submit">Modifier<?php  $laValeur->RAP_NUM;?></button>
+                                        <?php echo form_close();?>
+                                    </td>
                                 <!-- BOUTON POUR MODIFIER LE RAPPORT OU LE VALIDER-->
-                                <td> <?php   echo anchor('Saisie/modifier', 'modifier');?></td>
+                              <!--  <td> <?php   //echo anchor('Saisie/modifier', 'modifier');?></td>-->
                                 <td>
                                     <!--<button type="submit">Modifier<?php  //$laValeur->RAP_NUM;?></button>-->
                                 </td>

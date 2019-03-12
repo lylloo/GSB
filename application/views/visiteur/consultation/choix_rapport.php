@@ -100,7 +100,7 @@
                             foreach ($liste_rapports_de_visite as $libelle => $valeur) {
                             ?>
                                 <tr>
-                                    <td width="68px"><!-- Numéro de rapport de visite -->
+                                   <td width="68px"><!-- Numéro de rapport de visite -->
                                         <?php echo form_open('Consultation/selection/'.$valeur->RAP_NUM);?>
                                         <input type="hidden" name="debut" value="<?php if(isset($_POST['debut'])){echo $_POST['debut'];}?>">
                                         <input type="hidden" name="fin" value="<?php if(isset($_POST['fin'])){echo $_POST['fin'];}?>">
@@ -118,7 +118,7 @@
                                         ?>
                                         <button type="submit">N°<?php echo $valeur->RAP_NUM;?></button>
                                         <?php echo form_close();?>
-                                    </td>
+                                    </td> 
                                     <td width="80px">N°<?php echo $valeur->PRA_NUM;?></td> <!-- Numéro du praticien -->
                                     <td width="90px"><?php echo $valeur->PRA_NOM;?></td> <!-- Nom du praticien -->
                                     <td width="109.5px"><?php echo $valeur->PRA_PRENOM;?></td> <!-- Pénom du praticien -->
