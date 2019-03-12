@@ -1,4 +1,5 @@
-<style>
+
+<br><style>
     .table-details th{
         width: 180px;
         padding: 2px 5px;
@@ -32,7 +33,6 @@
         bottom:11px;
     }
 </style>
-<br>
 <table id="tableau-neutre" class="table-details">
     <thead>
         <tr>

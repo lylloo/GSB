@@ -82,7 +82,9 @@
         </tr>
 	</thead>
 
+
 	<?php
+        //APPELLE DE LA FONCTION
 		$liste_rapport_pas_valider = $this->ModelSaisie->rechercheRapport();
 	?>
 	<tbody>
@@ -102,9 +104,12 @@
                              <!-- MOTIF DU RAPPORT -->
  							<td width="149.5px"><?php echo $laValeur->RAP_MOTIF;?></td>
                              <!-- DATE RAPPORT-->
- 							<td width="79.5px"><?php echo $laValeur->RAP_DATE;?></td>
+ 							<!--<td width="79.5px"><?php //echo $laValeur->RAP_DATE;?></td>-->
+                             <td width="79.5px"><?php echo date_format(date_create($laValeur->RAP_DATE), 'd/m/Y');?></td>
+
  							 <td width="225px">
                                         <?php
+                                        //PARCOURS LISTE MEDICAMENTS PRESENTS
                                             $liste_medicaments_presentes = $this->ModelConsultation->liste_medicaments_presentes($laValeur->RAP_NUM);
 
                                             if ($liste_medicaments_presentes != null) {
