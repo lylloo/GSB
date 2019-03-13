@@ -9,14 +9,6 @@
         	<td><?php echo "Praticient : ".$informations_rapport[0]->PRA_NOM." ".$informations_rapport[0]->PRA_PRENOM;?></td><br>
         </tr>
 
-        <!-- MOTIF -->
-        <tr>
-        	<th>Motif de la visite :</th>
-        </tr>
-        <tr>
-        	<td><input type="text" placeholder=<?php echo $informations_rapport[0]->RAP_MOTIF;?>></td>
-        </tr>
-
         <!-- DATE -->
         <tr>
         	<th>Date du rapport :</th>
@@ -27,5 +19,26 @@
         	 
         	 <td><input type="date" id="date"> </td>
         </tr>
+
+        <!--  Bilan-->
+        <tr>
+            <th>Bilan de la visite :</th>
+        </tr>
+        <tr>
+            <td><?php echo form_input("bilan",$informations_rapport[0]->RAP_BILAN);  ?></td>
+        </tr>
+
+        <!-- MOTIF -->
+        <tr>
+        	<th>Motif de la visite :</th>
+        </tr>
+        <tr>
+        	<!--<td> <input type="text" placeholder=<?php //echo $informations_rapport[0]->RAP_MOTIF;?>></td>-->
+            <!-- motif de la visite -->
+            <!--  MOOTIF DE LA VISITE-->
+            <td><?php echo form_input("motif",$informations_rapport[0]->RAP_MOTIF); ?></td>
+        </tr>
+
+        
    		
  </table>
