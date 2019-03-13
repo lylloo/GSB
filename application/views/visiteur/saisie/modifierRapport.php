@@ -1,12 +1,37 @@
 
 <table>    
+        <?php
+            form_open("Saisie/choix");
+        ?>
         <tr>
         	<!-- Titre du rapport par rapport au numero -->
             <th colspan="2"><h3>Modifier le rapport de visite n°<?php echo $informations_rapport[0]->RAP_NUM;?></h3></th>
         </tr>
         <tr>
-        	<!--AFFICHE LE BON PRATICIEENT CODE A MODIFIER AFIN QUOND PUISSENT LE MODIFIER -->
-        	<td><?php echo "Praticient : ".$informations_rapport[0]->PRA_NOM." ".$informations_rapport[0]->PRA_PRENOM;?></td><br>
+            <th>Praticien : </th>
+        </tr>
+        <tr>
+        	<!--AFFICHE LE BON PRATICIENT -->
+        	<td><?php echo $informations_rapport[0]->PRA_NOM." ".$informations_rapport[0]->PRA_PRENOM;?></td><br>
+            <td>
+                <?php
+                    //APPELLE LA FONCTION POUR AFFICHER LES PARCTICIENT
+ 			        $toutPraticient = $this->ModelSaisie->toutPraticien();
+                ?>
+                <select name="praticien" id="">
+                        <option value="0">Tous les praticiens</option>
+                        <?php
+                            if (!empty($toutPraticient)) {
+                             foreach ($toutPraticient as $libelle => $valeur) {
+                        ?>
+                            <option value="<?php echo $valeur->PRA_NUM;?>" <?php if(!empty($_POST['praticien']) && $_POST['praticien'] == $valeur->PRA_NUM){echo "selected";}?>><?php echo $valeur->PRA_NOM." - ".$valeur->PRA_PRENOM;?></option>
+                        <?php
+                            }
+                        }
+                    ?>
+                 </select>
+            </td>
+
         </tr>
 
         <!-- DATE -->
@@ -39,6 +64,15 @@
             <td><?php echo form_input("motif",$informations_rapport[0]->RAP_MOTIF); ?></td>
         </tr>
 
-        
-   		
+        <!-- Medicament -->
+        <tr>
+            <th>Medicaments : </th>
+            <th> Médicaments pour modifier</th>
+        </tr>
+        <tr>
+            
+        </tr>
+        <?php
+            form_close();
+        ?>
  </table>
