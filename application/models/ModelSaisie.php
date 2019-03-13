@@ -61,5 +61,20 @@ class ModelSaisie extends CI_Model {
         return $query->result();
     }
 
+    /**
+    *permet de modifier les donnee dans l base de donne
+    **/
+    function update($date,$bilan,$motif,$num_rapport){
+        //$sql = "INSERT INTO contact (nom,prenom,email,commentaire) VALUES('".$nom."','".$prenom."','".$email ."','".$commentaire."')";
+        //$query = $this->db->query($sql);
+                //return $query->result();
+        
+    $sql = "UPDATE rapport_visite() SET RAP_DATE ='".$date."', RAP_BILAN='".$bilan;"', RAP_MOTIF='".$motif."', WHERE RAP_MOTIF= '".$num_rapport."';')";
+    $query = $this->db->query($sql);
+    return $query->result();
+
+    }
 }
+
+
 ?>

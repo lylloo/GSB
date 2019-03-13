@@ -63,6 +63,7 @@ class Saisie extends CI_Controller {
     }
 
     public function choix($num_rapport){
+        $this->load->library('form_validation');
 
          if (!empty($_SESSION['matricule'])) {         
             //Affichage de la liste des médicaments
@@ -73,6 +74,17 @@ class Saisie extends CI_Controller {
                 $data['informations_rapport'] = $this->ModelConsultation->informations_rapport_de_visite($num_rapport);
                 $data['liste_medicaments_presentes'] = $this->ModelConsultation->liste_medicaments_presentes($num_rapport);
                 $this->load->view('visiteur/saisie/modifierRapport', $data);
+
+
+                if($this->form_validation->run() == TRUE){
+            $praticien = $this->input->post('praticien');
+            $date = $this->input->post('date');
+            $bilan = $this->input->post('bilan');
+            $motif = $this->input->post('motif');
+            $medicament = $this->input->post('medicament');
+            $this->load->model('ModelSaisie');
+           $this->ModelSaisie->update($date,$bilan,$motif,$num_rapport);
+        }
             }
 
             $this->load->view('visiteur/footer');

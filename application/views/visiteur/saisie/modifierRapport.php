@@ -24,7 +24,7 @@
                             if (!empty($toutPraticient)) {
                              foreach ($toutPraticient as $libelle => $valeur) {
                         ?>
-                            <option value="<?php echo $valeur->PRA_NUM;?>" <?php if(!empty($_POST['praticien']) && $_POST['praticien'] == $valeur->PRA_NUM){echo "selected";}?>><?php echo $valeur->PRA_NOM." - ".$valeur->PRA_PRENOM;?></option>
+                            <option  value="<?php echo $valeur->PRA_NUM;?>" <?php if(!empty($_POST['praticien']) && $_POST['praticien'] == $valeur->PRA_NUM){echo "selected";}?>><?php echo $valeur->PRA_NOM." - ".$valeur->PRA_PRENOM;?></option>
                         <?php
                             }
                         }
@@ -83,7 +83,7 @@
                     <?php
                         foreach ($liste_medicaments_presentes as $libelle => $laValeur) {
                     ?>
-                            <option><?php echo $laValeur->MED_DEPOTLEGAL." - ".$laValeur->MED_NOMCOMMERCIAL;?></option>
+                            <option ><?php echo $laValeur->MED_DEPOTLEGAL." - ".$laValeur->MED_NOMCOMMERCIAL;?></option>
                     <?php
                         }
                      ?>
@@ -111,7 +111,7 @@
                             foreach ($tousMedicaments as $libelle => $valeur) {
                         ?>
                             <!-- <option><?php //echo $valeur->MED_DEPOTLEGAL." - ".$valeur->MED_NOMCOMMERCIAL;?></option>-->
-                            <option value="<?php echo $valeur->MED_DEPOTLEGAL;?>" <?php if(!empty($_POST['medicament']) && $_POST['medicament'] == $valeur->MED_DEPOTLEGAL){echo "selected";}?>><?php echo $valeur->MED_NOMCOMMERCIAL;?></option>
+                            <option  value="<?php echo $valeur->MED_DEPOTLEGAL;?>" <?php if(!empty($_POST['medicament']) && $_POST['medicament'] == $valeur->MED_DEPOTLEGAL){echo "selected";}?>><?php echo $valeur->MED_NOMCOMMERCIAL;?></option>
                         <?php
                             }
                         }
