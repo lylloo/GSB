@@ -121,6 +121,14 @@
 
         </tr>
 
+        <tr>
+            <td>
+                <?php
+                echo form_submit("valider","valider");
+                ?>
+            </td>
+        </tr>
+
         <?php
             form_close();
         ?>
