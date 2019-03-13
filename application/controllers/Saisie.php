@@ -82,6 +82,26 @@ class Saisie extends CI_Controller {
         }
     }
 
+     public function medicaments(){
+
+         if (!empty($_SESSION['matricule'])) {         
+            //Affichage de la liste des médicaments
+             $this->load->view('visiteur/header');
+
+                            //RECUPERE LES INFO DU RAPPORT PAR RAPPORT AU NUMERO DE RAPPORT
+              
+                $data['liste_medicaments'] = $this->ModelSaisie->liste_medicaments();
+                $this->load->view('visiteur/saisie/medicaments');
+
+            
+
+            $this->load->view('visiteur/footer');
+        } else {
+            //Sinon affichage du formulaire de connexion
+            $this->load->view('connexion_accueil');
+        }
+    }
+
     
     
 }

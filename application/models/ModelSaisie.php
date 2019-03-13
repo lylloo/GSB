@@ -49,5 +49,17 @@ class ModelSaisie extends CI_Model {
         return $query->result();
     }
 
+       /**
+     * Liste les médicaments présentés lors de la visite
+     * @return la liste des médicaments présentés
+     */
+    public function liste_medicaments(){
+        $query = $this->db->query("SELECT *
+                                    FROM  medicament m
+                                    ORDER BY m.MED_NOMCOMMERCIAL
+                                    ASC;");
+        return $query->result();
+    }
+
 }
 ?>
