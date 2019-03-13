@@ -63,6 +63,7 @@ class Saisie extends CI_Controller {
     }
 
     public function choix($num_rapport){
+
         $this->load->library('form_validation');
 
          if (!empty($_SESSION['matricule'])) {         
@@ -75,17 +76,44 @@ class Saisie extends CI_Controller {
                 $data['liste_medicaments_presentes'] = $this->ModelConsultation->liste_medicaments_presentes($num_rapport);
                 $this->load->view('visiteur/saisie/modifierRapport', $data);
 
+                  $this->form_validation->set_rules('date','date','required');
+                $this->form_validation->set_rules('bilan','bilan','required');
+             $this->form_validation->set_rules('motif','motif','required');
+            
 
+                //RECUPERE LES INFO DU RAPPORT PAR RAPPORT AU NUMERO DE RAPPORT
                 if($this->form_validation->run() == TRUE){
-            $praticien = $this->input->post('praticien');
-            $date = $this->input->post('date');
-            $bilan = $this->input->post('bilan');
-            $motif = $this->input->post('motif');
-            $medicament = $this->input->post('medicament');
-            $this->load->model('ModelSaisie');
-           $this->ModelSaisie->update($date,$bilan,$motif,$num_rapport);
+                    //$praticien = $this->input->post('praticien');
+                    $date = $this->input->post('date');
+                    $bilan = $this->input->post('bilan');
+                      $motif = $this->input->post('motif');
+                    //$medicament = $this->input->post('medicament');
+                    $this->load->model('ModelSaisie');
+                    $this->ModelSaisie->update($date,$bilan,$motif,$num_rapport);
+                    echo"reussi";
+
+
+                }
+
+             }
+         
+            $this->load->view('visiteur/footer');
+        } else {
+            //Sinon affichage du formulaire de connexion
+            $this->load->view('connexion_accueil');
         }
-            }
+    }
+
+    public function liste_praticien(){
+         if (!empty($_SESSION['matricule'])) {         
+            //Affichage de la liste des médicaments
+            $this->load->view('visiteur/header');
+
+            //Affichage de la page de saisie de compte rendu
+            $this->load->view('visiteur/saisie/liste_rapport_praticien');
+
+            //AJOUT NOUVEAU RAPPORT
+            //$this->load->view('visiteur/saisie/ajoutRapport');
 
             $this->load->view('visiteur/footer');
         } else {
@@ -94,9 +122,7 @@ class Saisie extends CI_Controller {
         }
     }
 
-    
-
-    
-    
+   
 }
+  
 ?>

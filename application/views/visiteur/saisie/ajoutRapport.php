@@ -50,33 +50,43 @@
              	br(1).
              	"<input type='date' name='dateVisite'>".
              	br(1).
+                form_label("bilan").
+                br(1).
+                form_input("Bilan").
+                br(1).
              	form_label("Motif de la visite").
+                br(1).
+                form_input("motif").
+                br(1).
+                form_label("liste des medicaments").
              	br(1);
 
-             	//APPELLE LA FONCTION POUR AFFICHER LES MOTIF 
-             	$motif = $this->ModelSaisie->motif();
-             	//var_dump($motif);
-             	?>
- 			<!-- AFFICHE LA LISTE DES motif -->
- 			<select name="motif" id="">
-                        <option value="0">Tous les motifs</option>
+             	 
+                $tousMedicaments = $this->ModelSaisie->liste_medicaments();
+            ?>
+            <!-- AFFICHE LA LISTE DES PRATICIENT -->
+            <select name="praticien" id="">
+                        <option value="0">Tous les medicament</option>
                     <?php
-                        if (!empty($motif)) {
-                            foreach ($motif as $libelle => $valeur) {
+                        if (!empty($tousMedicaments)) {
+                            foreach ($tousMedicaments as $libelle => $valeur) {
                         ?>
-                            <option value="<?php echo $valeur->RAP_MOTIF;?>" <?php if(!empty($_POST['motif']) && $_POST['motif'] == $valeur->RAP_MOTIF){echo "selected";}?>><?php echo $valeur->RAP_MOTIF;?></option>
+                            <!-- <option><?php //echo $valeur->MED_DEPOTLEGAL." - ".$valeur->MED_NOMCOMMERCIAL;?></option>-->
+                            <option  value="<?php echo $valeur->MED_DEPOTLEGAL;?>" <?php if(!empty($_POST['medicament']) && $_POST['medicament'] == $valeur->MED_DEPOTLEGAL){echo "selected";}?>><?php echo $valeur->MED_NOMCOMMERCIAL;?></option>
                         <?php
                             }
                         }
                     ?>
             </select>
+            <?php
+             	echo form_submit("valider","valider");
+             	?>
+ 			<!-- AFFICHE LA LISTE DES motif -->
+ 			
 
             <?php
             //AUTRE MOTIF DE LA VISITE
-            echo br(1).
-            	form_label("Autre motif").
-            	br(1).
-            	form_input("autreMotif");
+           
 
 
  			//FERME LE FORMULAIRE

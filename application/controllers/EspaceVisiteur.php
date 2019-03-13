@@ -88,6 +88,8 @@ class EspaceVisiteur extends CI_Controller {
 			$this->load->view('connexion_accueil');
         }
     }
+
+   
     
     public function deconnexion() //Saisie compte rendu
     {

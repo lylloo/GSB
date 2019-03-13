@@ -1,7 +1,7 @@
 
 <table>    
         <?php
-            form_open("Saisie/choix");
+            form_open("Saisie/update");
         ?>
         <tr>
         	<!-- Titre du rapport par rapport au numero -->
@@ -124,8 +124,9 @@
         <tr>
             <td>
                 <?php
-                echo form_submit("valider","valider");
+                //echo form_submit("valider","valider");
                 ?>
+                <button type="submit">Modifier<?php ?></button>
             </td>
         </tr>
 
