@@ -69,7 +69,7 @@ class ModelSaisie extends CI_Model {
         //$query = $this->db->query($sql);
                 //return $query->result();
         
-        $sql = "UPDATE rapport_visite() SET RAP_DATE ='".$date."', RAP_BILAN='".$bilan."', RAP_MOTIF='".$motif."', WHERE RAP_MOTIF= '".$num_rapport."';')";
+        $sql = "UPDATE rapport_visite( SET RAP_DATE ='".$date."', RAP_BILAN='".$bilan."', RAP_MOTIF='".$motif."', WHERE RAP_MOTIF= '".$num_rapport."';')";
          $query = $this->db->query($sql);
          return $query->result();
 

@@ -86,7 +86,7 @@ class Saisie extends CI_Controller {
                     //$praticien = $this->input->post('praticien');
                     $date = $this->input->post('date');
                     $bilan = $this->input->post('bilan');
-                    $motif = $this->input->post('motif');
+                      $motif = $this->input->post('motif');
                     //$medicament = $this->input->post('medicament');
                     $this->load->model('ModelSaisie');
                     $this->ModelSaisie->update($date,$bilan,$motif,$num_rapport);
@@ -103,7 +103,10 @@ class Saisie extends CI_Controller {
             $this->load->view('connexion_accueil');
         }
     }
- 
+
+   
+
+   
 }
   
 ?>
