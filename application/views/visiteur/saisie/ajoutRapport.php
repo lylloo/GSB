@@ -79,7 +79,14 @@
                     ?>
             </select>
             <?php
-             	echo form_submit("valider","valider");
+              
+                 echo
+                 br().
+                 form_label("Niveau de confiance").
+                 br().
+                 "<input type='number' name='numRapport'>".
+                 br().
+                 form_submit("valider","valider");
              	?>
  			<!-- AFFICHE LA LISTE DES motif -->
  			

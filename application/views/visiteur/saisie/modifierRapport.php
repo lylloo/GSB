@@ -1,7 +1,7 @@
 
 <table>    
         <?php
-            form_open("Saisie/update");
+            form_open("Saisie/choix");
         ?>
         <tr>
         	<!-- Titre du rapport par rapport au numero -->
@@ -58,9 +58,8 @@
         	<th>Motif de la visite :</th>
         </tr>
         <tr>
-        	<!--<td> <input type="text" placeholder=<?php //echo $informations_rapport[0]->RAP_MOTIF;?>></td>-->
-            <!-- motif de la visite -->
-            <!--  MOOTIF DE LA VISITE-->
+            
+            <!--  MOTIF DE LA VISITE-->
             <td><?php echo form_input("motif",$informations_rapport[0]->RAP_MOTIF); ?></td>
         </tr>
 
@@ -72,7 +71,8 @@
         <tr>
             <td width="225px">
                 <?php
-                 //PARCOURS LISTE MEDICAMENTS PRESENTS
+                
+                //PARCOURS LISTE MEDICAMENTS PRESENTS
                 //LISTE DES MEDICAMENTS PRESENTER
                 $liste_medicaments_presentes = $this->ModelConsultation->liste_medicaments_presentes($informations_rapport[0]->RAP_NUM);
 
@@ -103,9 +103,9 @@
             <?php
                 $tousMedicaments = $this->ModelSaisie->liste_medicaments();
             ?>
-            <!-- AFFICHE LA LISTE DES PRATICIENT -->
+            <!-- AFFICHE LA LISTE DES PRATICIENTS -->
             <select name="praticien" id="">
-                        <option value="0">Tous les medicament</option>
+                        <option value="0">Tous les medicaments</option>
                     <?php
                         if (!empty($tousMedicaments)) {
                             foreach ($tousMedicaments as $libelle => $valeur) {

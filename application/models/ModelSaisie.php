@@ -28,6 +28,7 @@ class ModelSaisie extends CI_Model {
 
     /**
     * voir tous les praticient
+    *@return tous les  praticiens
     */
     public function toutPraticien(){
         $query = $this->db->query("SELECT *
@@ -37,6 +38,7 @@ class ModelSaisie extends CI_Model {
     }
 
     /* VOIR TOUS LES MOTIF DE LA VISITE  */
+    
     /**
     * afficher les motif de la visite
     *@return tous les motif de la visite 
@@ -62,9 +64,9 @@ class ModelSaisie extends CI_Model {
     }
 
     /**
-    *permet de modifier les donnee dans l base de donne
-    **/
-    function update($date,$bilan,$motif,$num_rapport){
+    *permet de modifier les donnee dans la base de donne
+    */
+    function miseAjourRapport($date,$bilan,$motif,$num_rapport){
         $sql = $this->db->query("UPDATE rapport_visite
                                 SET RAP_DATE='".$date."',RAP_BILAN='".$bilan."',RAP_MOTIF='".$motif."'
                                 WHERE RAP_NUM='".$num_rapport."'; 

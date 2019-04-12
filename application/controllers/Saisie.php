@@ -86,7 +86,7 @@ class Saisie extends CI_Controller {
                     $motif = $this->input->post('motif');
                     //$medicament = $this->input->post('medicament');
                     $this->load->model('ModelSaisie');
-                    $this->ModelSaisie->update($date,$bilan,$motif,$num_rapport);
+                    $this->ModelSaisie->miseAjourRapport($date,$bilan,$motif,$num_rapport);
                     
 
 
