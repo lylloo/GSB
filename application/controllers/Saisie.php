@@ -73,9 +73,9 @@ class Saisie extends CI_Controller {
                 $data['liste_medicaments_presentes'] = $this->ModelConsultation->liste_medicaments_presentes($num_rapport);
                 $this->load->view('visiteur/saisie/modifierRapport', $data);
 
-                $this->form_validation->set_rules('date','date','required');
-                $this->form_validation->set_rules('bilan','bilan','required');
-                $this->form_validation->set_rules('motif','motif','required');
+                $this->form_validation->set_rules('date','date');
+                $this->form_validation->set_rules('bilan','bilan');
+                $this->form_validation->set_rules('motif','motif');
             
 
                 //RECUPERE LES INFO DU RAPPORT PAR RAPPORT AU NUMERO DE RAPPORT
@@ -87,7 +87,7 @@ class Saisie extends CI_Controller {
                     //$medicament = $this->input->post('medicament');
                     $this->load->model('ModelSaisie');
                     $this->ModelSaisie->miseAjourRapport($date,$bilan,$motif,$num_rapport);
-                    
+                    echo "reussi";
 
 
                 }
