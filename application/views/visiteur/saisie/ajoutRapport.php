@@ -82,10 +82,10 @@
               
                  echo
                  br().
-                 form_label("Niveau de confiance").
+                 /*form_label("Niveau de confiance").
                  br().
                  "<input type='number' name='numRapport'>".
-                 br().
+                 br().*/
                  form_submit("valider","valider");
              	?>
  			<!-- AFFICHE LA LISTE DES motif -->
