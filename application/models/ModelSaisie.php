@@ -74,6 +74,28 @@ class ModelSaisie extends CI_Model {
          return $query->result();
 
     }
+
+    
+    /* 
+    * permet d'ajouter , d'inserer un rapport de visite
+    */
+    function ajouterRapport($numRapport,$dateVisite,$bilan,$motif){
+
+        /* tableau des valeur */
+        $data = array('RAP_NUM' =>$numRapport ,
+                       /*'PRA_NUM'=>$praticien*/
+                       'RAP_DATE' =>$dateVisite,
+                        'RAP_BILAN'=>$bilan,
+                        'RAP_MOTIF' => $motif
+                     );
+
+        /* suite de la requette  */
+        $this->db->insert('rapport_visite', $data);
+       /* $sql = "INSERT INTO rapport_visite (RAP_NUM,PRA_NUM,RAP_BILAN,RAP_MOTIF) VALUES('".$numRapport."','".$dateVisite."','".$bilan ."','".$motif."')";
+        $query = $this->db->query($sql);*/
+
+    }
+
 }
 
 

@@ -45,19 +45,43 @@ class Saisie extends CI_Controller {
  
 
     public function ajout(){
-             if (!empty($_SESSION['matricule'])) {         
+             if (!empty($_SESSION['matricule'])) {   
+             $this->load->library('form_validation');
+      
             //Affichage de la liste des médicaments
             $this->load->view('visiteur/header');
 
             //Affichage de la page de saisie de compte rendu
             $this->load->view('visiteur/saisie/ajoutRapport');
 
+            /* form validation */
+            $this->form_validation->set_rules('numRapport','numRapport');
+            $this->form_validation->set_rules('dateVisite','dateVisite');
+            $this->form_validation->set_rules('bilan','bilan');
+            $this->form_validation->set_rules('motif','motif');
+
+            if($this->input->post('valider')){
+              
+            /* si ca tourne  */
+                if($this->form_validation->run() == TRUE){
+                    $numRapport = $this->input->post('numRapport');
+                    $dateVisite = $this->input->post('dateVisite');
+                    $bilan = $this->input->post('bilan');
+                    $motif = $this->input->post('motif');
+                    $this->ModelSaisie->ajouterRapport($numRapport,$dateVisite,$bilan,$motif);
+                }
+
+            }
+        
+            
+            /* pied de page */
             $this->load->view('visiteur/footer');
         } else {
             //Sinon affichage du formulaire de connexion
             $this->load->view('connexion_accueil');
         }
     }
+
 
     public function choix($num_rapport){
 
@@ -85,7 +109,7 @@ class Saisie extends CI_Controller {
                     $bilan = $this->input->post('bilan');
                     $motif = $this->input->post('motif');
                     //$medicament = $this->input->post('medicament');
-                    $this->load->model('ModelSaisie');
+                   //$this->load->model('ModelSaisie');
                     $this->ModelSaisie->miseAjourRapport($date,$bilan,$motif,$num_rapport);
                     echo "reussi";
 

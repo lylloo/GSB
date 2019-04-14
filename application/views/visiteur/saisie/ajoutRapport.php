@@ -27,7 +27,7 @@
  			
  			
  			//APPELLE LA FONCTION POUR AFFICHER LES PARCTICIENT
- 			$toutPraticient = $this->ModelSaisie->toutPraticien();
+ 			/*$toutPraticient = $this->ModelSaisie->toutPraticien();
  			?>
  			<!-- AFFICHE LA LISTE DES PRATICIENT -->
  			<select name="praticien" id="">
@@ -41,28 +41,29 @@
                             }
                         }
                     ?>
-            </select>
+            </select>*/
                     
-             <?php
+            
+             //<?php
              	echo
              	br(1).
              	form_label("Date de la visite").
              	br(1).
              	"<input type='date' name='dateVisite'>".
              	br(1).
-                form_label("bilan").
+                form_label("bilan","bilan").
                 br(1).
                 form_input("Bilan").
                 br(1).
              	form_label("Motif de la visite").
                 br(1).
-                form_input("motif").
+                form_input("motif","motif").
                 br(1).
                 form_label("liste des medicaments").
              	br(1);
 
              	 
-                $tousMedicaments = $this->ModelSaisie->liste_medicaments();
+              /*  $tousMedicaments = $this->ModelSaisie->liste_medicaments();
             ?>
             <!-- AFFICHE LA LISTE DES PRATICIENT -->
             <select name="praticien" id="">
@@ -77,8 +78,8 @@
                             }
                         }
                     ?>
-            </select>
-            <?php
+            </select>*/
+            //<?php
               
                  echo
                  br().
@@ -88,14 +89,7 @@
                  br().*/
                  form_submit("valider","valider");
              	?>
- 			<!-- AFFICHE LA LISTE DES motif -->
- 			
-
             <?php
-            //AUTRE MOTIF DE LA VISITE
-           
-
-
  			//FERME LE FORMULAIRE
  			form_close();
 
